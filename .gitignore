@@ -1,0 +1,28 @@
+node_modules/
+dist/
+.output/
+.vinxi/
+.nitro/
+.tanstack/
+.vite/
+*.local
+.env
+.env.*
+!.env.example
+
+# local QA / generation
+screenshots/
+artifacts/
+attachments/
+/tmp/
+
+# editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.log
+.cache/
+
+# workspace-only
+AGENTS.md
+AGENTS.project.md
