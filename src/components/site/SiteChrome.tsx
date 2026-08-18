@@ -432,7 +432,7 @@ export function About() {
               behind the work
             </h2>
           </div>
-          <div className="fuse space-y-6 rounded-xl p-1 text-lg leading-relaxed text-muted lg:col-span-8" data-fuse>
+          <div className="space-y-6 text-lg leading-relaxed text-muted lg:col-span-8">
             <p>
               Jesse Steckley (Aubdauban — New Dawn / Forever Light) is a member of Wasauksing First Nation through the Robinson Huron Treaty of 1850. Raised in Barrie, Ontario, he is the son of Jeff Steckley of Midhurst and Tracey Pawis (Boshdayosgaykwe) of Wasauksing, founder of G’zaagin Art Gallery. His family roots include the Tabobondung and Pawis families of Wasauksing—among them his grandmother Audrey Gladys Pawis (PamajewonKwe), a long-time Community Health Representative who helped shape health and social programs in Wasauksing for more than twenty-five years; her husband Lorne Frederick Pawis, who served in the military; and Audrey’s father, Alfred Edward Waubgeshig Tabobondung, a former chief. On his father’s side, he comes from the Steckley family of Barrie, including his grandparents Keith Steckley and Annshiela Francis Young. His brother,{" "}
               <a href={LINKS.mangeshig} target="_blank" rel="noopener noreferrer" className="text-accent underline-offset-4 hover:underline">
@@ -569,7 +569,7 @@ function GitHubContributions() {
   });
 
   return (
-    <div className="fuse mt-12 rounded-xl border border-border bg-elevated p-5 sm:p-7" data-fuse>
+    <div className="mt-12 rounded-xl border border-border bg-elevated p-5 sm:p-7">
       <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">GitHub</p>
