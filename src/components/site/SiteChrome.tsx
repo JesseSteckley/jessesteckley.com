@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { FAQ, LINKS, SITE } from "@/lib/site";
 
 const NAV = [
@@ -181,6 +181,62 @@ export function Nav() {
   );
 }
 
+
+function CountUp({
+  to,
+  prefix = "",
+  suffix = "",
+  decimals = 0,
+}: {
+  to: number;
+  prefix?: string;
+  suffix?: string;
+  decimals?: number;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setValue(to);
+      return;
+    }
+    let frame = 0;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+        io.disconnect();
+        const start = performance.now();
+        const duration = 1600;
+        const tick = (now: number) => {
+          const t = Math.min(1, (now - start) / duration);
+          const eased = 1 - (1 - t) ** 3;
+          setValue(to * eased);
+          if (t < 1) frame = window.requestAnimationFrame(tick);
+        };
+        frame = window.requestAnimationFrame(tick);
+      },
+      { threshold: 0.45 },
+    );
+    io.observe(node);
+    return () => {
+      io.disconnect();
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [to]);
+
+  const shown = decimals > 0 ? value.toFixed(decimals) : Math.round(value).toLocaleString("en-CA");
+  return (
+    <span ref={ref}>
+      {prefix}
+      {shown}
+      {suffix}
+    </span>
+  );
+}
+
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-24 md:pt-28">
@@ -237,21 +293,32 @@ export function Hero() {
 
 export function Stats() {
   return (
-    <section aria-label="Selected results" className="border-t border-border bg-surface">
+    <section aria-label="Growth I helped deliver" className="border-t border-border bg-surface">
       <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-        <button type="button" className="fuse px-5 py-8 text-left sm:px-8" data-fuse onClick={() => spark("dawn")}>
-          <p className="font-display text-2xl text-fg">530</p>
-          <p className="mt-1 text-sm text-muted">Awards annually</p>
+        <button type="button" className="fuse px-5 py-8 text-left sm:px-8" data-fuse onClick={() => spark("dawn")} aria-label="Grew BCM Indigenous Education Awards from 100 to 530 awards a year">
+          <p className="font-display text-2xl text-fg tabular-nums">
+            <CountUp to={530} />
+          </p>
+          <p className="mt-1 text-sm text-muted">Awards a year — grown from 100</p>
         </button>
-        <button type="button" className="fuse px-5 py-8 text-left sm:px-8" data-fuse onClick={() => spark("dawn")}>
-          <p className="font-display text-2xl text-fg">$1.6M</p>
-          <p className="mt-1 text-sm text-muted">Student support</p>
+        <button type="button" className="fuse px-5 py-8 text-left sm:px-8" data-fuse onClick={() => spark("dawn")} aria-label="Grew annual student support from 300 thousand to 1.6 million dollars">
+          <p className="font-display text-2xl text-fg tabular-nums">
+            <CountUp to={1.6} prefix="$" suffix="M" decimals={1} />
+          </p>
+          <p className="mt-1 text-sm text-muted">Annual student support — from $300K</p>
         </button>
         <button type="button" className="fuse px-5 py-8 text-left sm:px-8" data-fuse onClick={() => spark("dawn")}>
           <p className="font-display text-2xl text-fg">Future 40</p>
           <p className="mt-1 text-sm text-muted">CBC Manitoba, 2025</p>
         </button>
       </div>
+      <p className="mx-auto max-w-6xl px-5 pb-6 pt-1 text-xs leading-relaxed text-subtle sm:px-8">
+        The Indigenous Education Awards are a{" "}
+        <a href={LINKS.iea} target="_blank" rel="noopener noreferrer" className="underline-offset-2 hover:text-accent hover:underline">
+          Business Council of Manitoba
+        </a>{" "}
+        program. I led its growth. I do not own it.
+      </p>
     </section>
   );
 }
@@ -406,7 +473,7 @@ const IMPACT = [
     sub: "BCM · Indigenous Education Awards",
     href: LINKS.iea,
     logo: "/images/logo-iea.png",
-    body: "Grew the largest Indigenous student awards program in the province from 100 awards ($300,000) to 530 awards ($1.6M), expanding access and outcomes for students across Manitoba.",
+    body: "Led growth of the Business Council of Manitoba’s Indigenous Education Awards — the province’s largest — from 100 awards ($300,000) to 530 awards and $1.6M in annual student support. The program belongs to BCM; I grew it.",
   },
   {
     title: "Procurement",
