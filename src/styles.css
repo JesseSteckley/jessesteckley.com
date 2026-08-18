@@ -514,66 +514,54 @@ details > summary {
 }
 
 
-.scroll-light {
-  cursor: pointer;
-  transition:
-    box-shadow 420ms ease,
-    transform 420ms ease;
+
+.fuse {
+  --fuse: 0.12;
+  position: relative;
 }
 
-.scroll-embers {
+.fuse::before {
+  content: "";
   position: absolute;
-  top: 0.9rem;
-  right: 0.95rem;
-  z-index: 3;
-  display: flex;
-  gap: 0.35rem;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from calc(var(--fuse) * 360deg - 28deg),
+    transparent 0 68%,
+    color-mix(in oklab, var(--color-accent) 0%, transparent) 74%,
+    color-mix(in oklab, var(--color-accent) 45%, transparent) 84%,
+    #efe6d4 90%,
+    var(--color-accent) 94%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
   pointer-events: none;
+  z-index: 6;
+  opacity: 0.22;
+  transition: opacity 280ms ease;
 }
 
-.scroll-embers i {
-  display: block;
-  width: 0.42rem;
-  height: 0.42rem;
-  border-radius: 999px;
-  background: color-mix(in oklab, var(--color-fg) 22%, transparent);
-  box-shadow: none;
-  transition:
-    background 380ms ease,
-    box-shadow 380ms ease,
-    transform 380ms ease;
+.fuse.is-lit::before {
+  opacity: 1;
 }
 
-.scroll-light.is-lit {
-  box-shadow:
-    0 0 0 1px color-mix(in oklab, var(--color-accent) 55%, transparent),
-    0 12px 40px color-mix(in oklab, var(--color-accent) 14%, transparent);
-  transform: translateY(-2px);
-}
-
-.scroll-light.is-lit .scroll-embers i {
-  background: var(--color-accent);
-  box-shadow: 0 0 10px color-mix(in oklab, var(--color-accent) 80%, transparent);
-}
-
-.scroll-light.is-lit .scroll-embers i:nth-child(2) {
-  transition-delay: 70ms;
-}
-
-.scroll-light.is-lit .scroll-embers i:nth-child(3) {
-  transition-delay: 140ms;
-}
-
-.scroll-light:hover {
-  box-shadow:
-    0 0 0 1px color-mix(in oklab, var(--color-accent) 70%, transparent),
-    0 16px 46px color-mix(in oklab, var(--color-accent) 18%, transparent);
+.site-header.fuse {
+  border-radius: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-light,
-  .scroll-embers i {
-    transition: none;
-    transform: none;
+  .fuse::before {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--color-accent) 50%, transparent),
+      transparent
+    );
+    opacity: 0.45;
   }
 }

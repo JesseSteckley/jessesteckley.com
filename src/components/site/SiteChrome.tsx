@@ -8,35 +8,49 @@ const NAV = [
   { href: "#contact", label: "Contact" },
 ];
 
-function ScrollEmbers() {
-  return (
-    <span className="scroll-embers" aria-hidden>
-      <i />
-      <i />
-      <i />
-    </span>
-  );
-}
-
 export function ScrollLights() {
   useEffect(() => {
-    const nodes = Array.from(document.querySelectorAll<HTMLElement>("[data-scroll-light]"));
-    if (!nodes.length) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const collect = () => Array.from(document.querySelectorAll<HTMLElement>("[data-fuse]"));
+
+    const update = () => {
+      const vh = window.innerHeight || 1;
+      for (const el of collect()) {
+        const r = el.getBoundingClientRect();
+        const span = vh + Math.max(r.height, 1);
+        const raw = (vh - r.top) / span;
+        const progress = Math.max(0, Math.min(1, raw));
+        el.style.setProperty("--fuse", progress.toFixed(4));
+        const visible = r.bottom > vh * 0.08 && r.top < vh * 0.92;
+        el.classList.toggle("is-lit", visible);
+      }
+    };
+
     if (reduce) {
-      nodes.forEach((n) => n.classList.add("is-lit"));
+      collect().forEach((el) => {
+        el.style.setProperty("--fuse", "0.18");
+        el.classList.add("is-lit");
+      });
       return;
     }
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          entry.target.classList.toggle("is-lit", entry.isIntersecting && entry.intersectionRatio >= 0.28);
-        }
-      },
-      { threshold: [0.15, 0.28, 0.45, 0.7], rootMargin: "-12% 0px -16% 0px" },
-    );
-    nodes.forEach((n) => io.observe(n));
-    return () => io.disconnect();
+
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        update();
+      });
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
   return null;
 }
@@ -113,7 +127,7 @@ export function Nav() {
     return () => root.removeEventListener("click", onClick);
   }, []);
   return (
-    <header className="site-header">
+    <header className="site-header fuse" data-fuse>
       <div className="site-header-inner">
         <a href="#top" className="site-logo" aria-label="Jesse Steckley — home">
           <LogoMark />
@@ -154,7 +168,7 @@ export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-24 md:pt-28">
       <div className="mx-auto flex max-w-6xl flex-col items-center px-5 pb-16 sm:px-6 md:flex-row md:items-center md:gap-10 md:pb-20 lg:gap-14">
-        <div className="w-full md:w-1/2 md:shrink-0">
+        <div className="fuse w-full rounded-xl md:w-1/2 md:shrink-0" data-fuse>
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.14em] text-accent">
             Wasauksing First Nation · Robinson Huron Treaty 1850
           </p>
@@ -205,15 +219,15 @@ export function Stats() {
   return (
     <section aria-label="Selected results" className="border-t border-border bg-surface">
       <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-        <div className="px-5 py-8 sm:px-8">
+        <div className="fuse px-5 py-8 sm:px-8" data-fuse>
           <p className="font-display text-2xl text-fg">530</p>
           <p className="mt-1 text-sm text-muted">Awards annually</p>
         </div>
-        <div className="px-5 py-8 sm:px-8">
+        <div className="fuse px-5 py-8 sm:px-8" data-fuse>
           <p className="font-display text-2xl text-fg">$1.6M</p>
           <p className="mt-1 text-sm text-muted">Student support</p>
         </div>
-        <div className="px-5 py-8 sm:px-8">
+        <div className="fuse px-5 py-8 sm:px-8" data-fuse>
           <p className="font-display text-2xl text-fg">Future 40</p>
           <p className="mt-1 text-sm text-muted">CBC Manitoba, 2025</p>
         </div>
@@ -277,8 +291,7 @@ export function Approach() {
         </p>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {APPROACH.map((item) => (
-            <article key={item.title} data-scroll-light className={(item.feature ? "case-tile md:col-span-2" : "case-tile") + " scroll-light"}>
-              <ScrollEmbers />
+            <article key={item.title} data-fuse className={(item.feature ? "case-tile md:col-span-2" : "case-tile") + " fuse"}>
               <figure>
                 <picture>
                   <source srcSet={item.image} type="image/webp" />
@@ -321,7 +334,7 @@ export function About() {
               behind the work
             </h2>
           </div>
-          <div className="space-y-6 text-lg leading-relaxed text-muted lg:col-span-8">
+          <div className="fuse space-y-6 rounded-xl p-1 text-lg leading-relaxed text-muted lg:col-span-8" data-fuse>
             <p>
               Jesse Steckley (Aubdauban — New Dawn / Forever Light) is a member of Wasauksing First Nation through the Robinson Huron Treaty of 1850. Raised in Barrie, Ontario, he is the son of Jeff Steckley of Midhurst and Tracey Pawis (Boshdayosgaykwe) of Wasauksing, founder of G’zaagin Art Gallery. His family roots include the Tabobondung and Pawis families of Wasauksing—among them his grandmother Audrey Gladys Pawis (PamajewonKwe), a long-time Community Health Representative who helped shape health and social programs in Wasauksing for more than twenty-five years; her husband Lorne Frederick Pawis, who served in the military; and Audrey’s father, Alfred Edward Waubgeshig Tabobondung, a former chief. On his father’s side, he comes from the Steckley family of Barrie, including his grandparents Keith Steckley and Annshiela Francis Young. His brother,{" "}
               <a href={LINKS.mangeshig} target="_blank" rel="noopener noreferrer" className="text-accent underline-offset-4 hover:underline">
@@ -457,7 +470,7 @@ function GitHubContributions() {
   });
 
   return (
-    <div className="mt-12 rounded-xl border border-border bg-elevated p-5 sm:p-7">
+    <div className="fuse mt-12 rounded-xl border border-border bg-elevated p-5 sm:p-7" data-fuse>
       <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">GitHub</p>
@@ -561,10 +574,9 @@ export function Impact() {
               href={card.href}
               target="_blank"
               rel="noopener noreferrer"
-              data-scroll-light
-              className="scroll-light relative group flex flex-col rounded-xl bg-elevated p-6 shadow-[0_0_0_1px_color-mix(in_oklab,var(--color-fg)_10%,transparent)]"
+              data-fuse
+              className="fuse relative group flex flex-col rounded-xl bg-elevated p-6 shadow-[0_0_0_1px_color-mix(in_oklab,var(--color-fg)_10%,transparent)]"
             >
-              <ScrollEmbers />
               <div className="flex items-start justify-between gap-3">
                 <img src={card.logo} alt="" width={72} height={28} className="h-7 w-auto object-contain opacity-90" />
                 <IconArrow className="text-subtle group-hover:text-accent" />
@@ -589,7 +601,7 @@ export function Faq() {
         <h2 className="font-display text-2xl text-fg">Common questions</h2>
         <div className="mt-10 divide-y divide-border border-y border-border">
           {FAQ.map((item) => (
-            <details key={item.q} className="group py-5">
+            <details key={item.q} className="fuse group rounded-md py-5" data-fuse>
               <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-medium text-fg">
                 {item.q}
                 <span className="text-subtle transition-transform duration-150 group-open:rotate-45">+</span>
@@ -628,7 +640,7 @@ export function Contact() {
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
           Whether you are an Indigenous community, government, organization, or ally — if the work is economic reconciliation, reach out.
         </p>
-        <div className="mt-10">
+        <div className="fuse mt-10 rounded-xl p-5" data-fuse>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-subtle">Email</p>
           <a href={`mailto:${SITE.email}`} className="mt-2 inline-block text-xl font-semibold text-accent hover:text-accent-strong sm:text-2xl">
             {SITE.email}
