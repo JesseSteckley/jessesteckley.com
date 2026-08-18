@@ -4,7 +4,7 @@ export const SITE = {
   title: "Jesse Steckley | Economic Reconciliation Advisor",
   shortTitle: "Economic Reconciliation Advisor",
   description:
-    "Jesse Steckley (Aubdauban) is an Economic Reconciliation Advisor from Wasauksing First Nation. Founder of Waaseyak. Workforce development, Indigenous procurement, and Nation-building across Canada.",
+    "Jesse Steckley (Aubdauban) is an Economic Reconciliation Advisor from Wasauksing First Nation. Founder of Waaseyak. He works with Indigenous communities and allies across Canada on the full range of economic reconciliation — not only workforce and procurement.",
   url: "https://jessesteckley.com",
   email: "jessesteckley@gmail.com",
   locale: "en_CA",
@@ -22,6 +22,8 @@ export const SITE = {
     "Aubdauban",
     "Economic Reconciliation Advisor",
     "Indigenous economic development",
+    "Indigenous communities",
+    "economic reconciliation allies",
     "Wasauksing First Nation",
     "Robinson Huron Treaty 1850",
     "Waaseyak",
@@ -53,18 +55,22 @@ export const FAQ = [
   },
   {
     q: "What is an Economic Reconciliation Advisor?",
-    a: "An Economic Reconciliation Advisor helps First Nations and partners turn policy into practical outcomes — workforce pathways, procurement, capacity, and systems that support Nation-building.",
+    a: "An Economic Reconciliation Advisor helps Indigenous communities and allies turn relationship and policy into practical outcomes — workforce, procurement, capital, housing, energy, governance, digital tools, and any other work that builds lasting economic wellbeing.",
   },
   {
     q: "What is Waaseyak?",
-    a: "Waaseyak is Jesse Steckley’s consulting practice supporting First Nations and organizations on Indigenous economic development, workforce strategy, and long-term prosperity.",
+    a: "Waaseyak is Jesse Steckley’s practice supporting Indigenous communities and allied organizations on the full range of economic reconciliation — not a single program type or a First Nations-only mandate.",
+  },
+  {
+    q: "Who do you work with?",
+    a: "Indigenous communities and governments, and allies — companies, institutions, funders, and public partners who want to do the work well. The mandate is economic reconciliation, not a single sector.",
   },
   {
     q: "How can I work with Jesse?",
-    a: "Email jessesteckley@gmail.com. Typical work includes workforce and education pathways, Indigenous procurement, Nation-building strategy, and — when requested — websites or apps built for Indigenous communities. Larger builds are scoped so a team can be assembled and the work finished to the Nation’s standard.",
+    a: "Email jessesteckley@gmail.com. Bring the file you have: strategy, workforce, procurement, housing, energy, digital, or something still taking shape. When a site or app is needed, that can be built too. Larger work is scoped so a team can be assembled and finished to the community’s standard.",
   },
   {
-    q: "Do you build websites or apps for Nations?",
-    a: "Yes. Jesse has web-development training from Juno College of Technology and uses AI to help design, build, and launch sites and applications. Smaller projects can be built directly; larger ones are priced so a team can be brought together and stay on until the work meets the Nation’s standard.",
+    q: "Do you build websites or apps?",
+    a: "Yes, when they serve Indigenous communities or allied partners. Jesse has web-development training from Juno College of Technology and uses AI to help design, build, and launch. Smaller projects can be built directly; larger ones are priced so a team can stay on until the work meets the community’s standard.",
   },
 ] as const;

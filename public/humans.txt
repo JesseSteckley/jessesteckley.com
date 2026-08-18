@@ -8,6 +8,6 @@ Location: Winnipeg, Treaty 1 Territory
 Contact: jessesteckley@gmail.com
 
 /* SITE */
-Last update: 2026-08-17
+Last update: 2026-08-18
 Standards: HTML5, CSS, Schema.org, Open Graph
 Language: en-CA

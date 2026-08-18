@@ -4,7 +4,7 @@ Personal site for **Jesse Steckley (Aubdauban)** — Economic Reconciliation Adv
 
 **Live:** [jessesteckley.com](https://jessesteckley.com)
 
-Workforce development, Indigenous procurement, Nation-building, and — when a Nation asks — websites and apps built with practical AI tools.
+Works with **Indigenous communities and allies** on the full range of economic reconciliation — strategy, people, capital, systems, and digital tools. Not a First Nations-only mandate, and not limited to workforce or procurement.
 
 ## What’s here
 

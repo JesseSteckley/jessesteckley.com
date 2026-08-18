@@ -50,12 +50,13 @@ export function JsonLd() {
           },
         },
         knowsAbout: [
+          "Economic reconciliation",
           "Indigenous economic development",
+          "Indigenous communities and allies",
           "Workforce development",
           "Indigenous procurement",
-          "Economic reconciliation",
           "Indigenomics",
-          "Nation-building",
+          "Community economic strategy",
         ],
       },
       {
@@ -72,32 +73,32 @@ export function JsonLd() {
           { "@type": "AdministrativeArea", name: "Manitoba" },
         ],
         serviceType: [
-          "Indigenous workforce development",
-          "Indigenous procurement advisory",
-          "Economic reconciliation strategy",
+          "Economic reconciliation advisory",
+          "Indigenous community economic development",
+          "Ally and institutional partnership strategy",
         ],
         description:
-          "Consulting for First Nations and partners on workforce development, economic participation, and Nation-building.",
+          "Advisory for Indigenous communities and allies on the full range of economic reconciliation work across Canada.",
         makesOffer: [
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Workforce and education pathways",
+              name: "Economic reconciliation strategy",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Indigenous procurement advisory",
+              name: "Community and ally partnership support",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Nation-building strategy",
+              name: "Practical systems, tools, and implementation",
             },
           },
         ],

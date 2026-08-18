@@ -129,7 +129,7 @@ export function Hero() {
           <p className="mt-4 text-xl font-medium text-fg/90 md:text-2xl">{SITE.shortTitle}</p>
           <p className="mt-2 text-sm text-subtle">Aubdauban — New Dawn / Forever Light</p>
           <p className="mt-8 max-w-md text-lg leading-relaxed text-muted">
-            Building better futures for all Canadians through practical capacity, stronger systems, and lasting partnerships.
+            Economic reconciliation with Indigenous communities and allies — the full file, not a single program type.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <a
@@ -196,9 +196,9 @@ const APPROACH = [
     imageFallback: "/images/approach-people-1100.jpg",
     line: "Strong communities start with strong people. Workforce, education, and the relationships that make economic reconciliation real.",
     points: [
-      "Indigenous workforce development & education",
-      "Capacity building with Nations and organizations",
-      "Healthy systems that support people and families",
+      "People, education, and workforce when they serve the wider file",
+      "Capacity with communities, governments, and allied organizations",
+      "Healthy systems that support families and the next generation",
     ],
   },
   {
@@ -206,11 +206,11 @@ const APPROACH = [
     title: "Systems that last",
     image: "/images/approach-land-1100.webp",
     imageFallback: "/images/approach-land-1100.jpg",
-    line: "Tools and clean systems only create lasting value when they strengthen Nations and honour relationships with land.",
+    line: "Tools and clean systems only create lasting value when they honour land and serve community priorities — including allies ready to do the work properly.",
     points: [
       "Technology guided by Indigenous priorities and values",
-      "Clean energy and infrastructure that support Nation-building",
-      "Systems designed for community health and intergenerational prosperity",
+      "Energy, infrastructure, and capital that support community futures",
+      "Systems designed for health and intergenerational prosperity",
     ],
   },
 ];
@@ -222,7 +222,7 @@ export function Approach() {
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">01 — Approach</p>
         <h2 className="max-w-xl font-display text-2xl text-fg md:text-3xl">Wealth medicine in practice.</h2>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-          Real progress happens when people, land, and systems are aligned for community wellbeing and intergenerational prosperity.
+          Real progress happens when Indigenous communities and allies move people, land, and systems together — for wellbeing that lasts more than one funding cycle.
         </p>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {APPROACH.map((item) => (
@@ -273,7 +273,7 @@ export function About() {
               , is a nationally recognized Indigenous children’s book illustrator.
             </p>
             <p>
-              After beginning in the trades, Jesse completed the Aboriginal Community and Social Development diploma at Georgian College and continued at Trent University, studying Indigenous Studies with a minor in Business Administration. He later trained in web development at Juno College of Technology (2018–2019), covering HTML, CSS, responsive and accessible design, Sass, and JavaScript. That mix—practical work, Indigenous and business education, and modern web skills—shapes how he approaches economic reconciliation today, including building tools with AI when Nations need them.
+              After beginning in the trades, Jesse completed the Aboriginal Community and Social Development diploma at Georgian College and continued at Trent University, studying Indigenous Studies with a minor in Business Administration. He later trained in web development at Juno College of Technology (2018–2019), covering HTML, CSS, responsive and accessible design, Sass, and JavaScript. That mix—practical work, Indigenous and business education, and modern web skills—shapes how he approaches economic reconciliation today, including building tools with AI when communities or allies need them.
             </p>
             <p>
               Jesse is best known for growing Manitoba’s largest{" "}
@@ -284,17 +284,17 @@ export function About() {
               <a href={LINKS.ccib} target="_blank" rel="noopener noreferrer" className="text-accent underline-offset-4 hover:underline">
                 Canadian Council for Indigenous Business
               </a>{" "}
-              and works with Nations and partners on workforce development, capacity building, and economic strategy. In 2025, he was named to{" "}
+              and takes on the full range of economic reconciliation work with Indigenous communities and allies. In 2025, he was named to{" "}
               <a href={LINKS.cbc} target="_blank" rel="noopener noreferrer" className="text-accent underline-offset-4 hover:underline">
                 CBC Manitoba’s Future 40
               </a>{" "}
               for leadership in economic reconciliation.
             </p>
             <p>
-              As founder of Waaseyak, Jesse helps First Nations and organizations build practical systems for prosperity—stronger workforces, better economic participation, and long-term Nation-building. He is the husband of Nicola Little, Artist & Cultural Connector from Garden Hill First Nation (Treaty 5), who has more than 15 years in the arts and cultural sector, and the father of Charlie and Zaagaasgeh Lucy. He lives in Winnipeg on Treaty 1 Territory.
+              As founder of Waaseyak, Jesse works with Indigenous communities and allies on whatever the economic reconciliation file requires — strategy, people, capital, systems, and the relationships that make them last. He is the husband of Nicola Little, Artist & Cultural Connector from Garden Hill First Nation (Treaty 5), who has more than 15 years in the arts and cultural sector, and the father of Charlie and Zaagaasgeh Lucy. He lives in Winnipeg on Treaty 1 Territory.
             </p>
             <p className="text-base text-subtle">
-              This site is a simple point of contact. If you’re working on Indigenous workforce development, economic reconciliation, or related opportunities — I’d welcome the conversation.
+              This site is a simple point of contact. If you are an Indigenous community or an ally working on economic reconciliation — I’d welcome the conversation.
             </p>
           </div>
         </div>
@@ -419,7 +419,7 @@ function GitHubContributions() {
         </a>
       </div>
       <p className="mb-6 max-w-2xl text-sm leading-relaxed text-muted">
-        I build practical tools with AI for Indigenous communities — websites and apps when asked. Larger projects are scoped so I can assemble a team and stay until the work meets the Nation’s standard.
+        I build practical tools with AI for Indigenous communities and allies — websites and apps when asked. Larger projects are scoped so I can assemble a team and stay until the work meets the community’s standard.
       </p>
       <div className="overflow-x-auto">
         {weeks.length ? (
@@ -496,7 +496,7 @@ export function Impact() {
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">03 — Impact</p>
         <h2 className="font-display text-2xl text-fg">Selected impact</h2>
-        <p className="mt-3 max-w-xl text-muted">A few markers of the work — focused on results that matter for people and communities.</p>
+        <p className="mt-3 max-w-xl text-muted">Markers of the work so far — not the whole mandate. Economic reconciliation is broader than any one program.</p>
         <div className="mt-12 grid gap-4 sm:grid-cols-3">
           {IMPACT.map((card) => (
             <a
@@ -567,7 +567,7 @@ export function Contact() {
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">05 — Contact</p>
         <h2 className="font-display text-2xl text-fg">Let’s talk</h2>
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
-          Whether you’re a Nation, organization, or partner looking to advance Indigenous workforce development, economic reconciliation, or related work — reach out.
+          Whether you are an Indigenous community, government, organization, or ally — if the work is economic reconciliation, reach out.
         </p>
         <div className="mt-10">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-subtle">Email</p>
