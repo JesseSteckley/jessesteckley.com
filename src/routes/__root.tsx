@@ -78,6 +78,13 @@ export const Route = createRootRoute({
       { rel: "me", href: SITE.github },
       { rel: "me", href: `mailto:${SITE.email}` },
     ],
+    scripts: [
+      {
+        defer: true,
+        src: "https://plausible.io/js/script.tagged-events.js",
+        "data-domain": "jessesteckley.com",
+      },
+    ],
   }),
   component: RootDocument,
 });
