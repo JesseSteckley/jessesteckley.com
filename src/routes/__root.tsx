@@ -78,13 +78,6 @@ export const Route = createRootRoute({
       { rel: "me", href: SITE.github },
       { rel: "me", href: `mailto:${SITE.email}` },
     ],
-    scripts: [
-      {
-        defer: true,
-        src: "https://plausible.io/js/script.tagged-events.js",
-        "data-domain": "jessesteckley.com",
-      },
-    ],
   }),
   component: RootDocument,
 });
@@ -94,6 +87,13 @@ function RootDocument() {
     <html lang="en-CA" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <script async src="https://plausible.io/js/pa-iR81GFzWeB4RFuRM9JTon.js" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()",
+          }}
+        />
       </head>
       <body className="antialiased bg-bg text-fg">
         <PreviewHostBridge />
