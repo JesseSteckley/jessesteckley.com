@@ -200,7 +200,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="fuse order-2 w-full max-w-xl rounded-xl md:order-1" data-fuse>
+        <div className="order-2 w-full max-w-xl md:order-1">
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.14em] text-accent">
             Wasauksing First Nation · Robinson Huron Treaty 1850
           </p>
