@@ -574,7 +574,7 @@ function GitHubContributions() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">GitHub</p>
           <p className="mt-2 text-sm text-muted">
-            <span className="font-medium text-fg">{total ?? "—"} contributions</span> in 2026 · building in public
+            <span className="font-medium text-fg">{total ?? "—"} contributions</span> in 2026 · I still write the tools
           </p>
         </div>
         <a
@@ -588,7 +588,7 @@ function GitHubContributions() {
         </a>
       </div>
       <p className="mb-6 max-w-2xl text-sm leading-relaxed text-muted">
-        I build practical tools with AI for Indigenous communities and allies — websites and apps when asked. Larger projects are scoped so I can assemble a team and stay until the work meets the community’s standard.
+        Strategy first — and I can sit in the stack. I use AI and a Juno web-dev base to ship sites and tools when asked. Larger builds, I bring a team and stay until the work meets the community’s standard.
       </p>
       <div className="overflow-x-auto">
         {weeks.length ? (
