@@ -336,6 +336,8 @@ const APPROACH = [
       "Capacity with communities, governments, and allies",
       "Systems that still work for families a generation from now",
     ],
+    cta: "Schedule a discovery call",
+    href: LINKS.discovery,
   },
   {
     kicker: "02 — Land",
@@ -349,6 +351,8 @@ const APPROACH = [
       "Energy and infrastructure that support community futures",
       "Systems designed for health and intergenerational prosperity",
     ],
+    cta: "Schedule a discovery call",
+    href: LINKS.discovery,
   },
   {
     kicker: "03 — Capital · Founder & Principal",
@@ -395,7 +399,12 @@ export function Approach() {
                   ))}
                 </div>
                 {"cta" in item && item.cta ? (
-                  <a href={item.href} className="case-cta">
+                  <a
+                    href={item.href}
+                    className="case-cta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {item.cta}
                   </a>
                 ) : null}

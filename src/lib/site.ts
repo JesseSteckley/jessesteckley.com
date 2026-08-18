@@ -41,6 +41,8 @@ export const SITE = {
 } as const;
 
 export const LINKS = {
+  discovery:
+    "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Discovery%20call%20with%20Jesse%20Steckley&details=30-minute%20Google%20Meet%20discovery%20call%20on%20economic%20reconciliation.%20Please%20pick%20a%20time%20and%20add%20a%20Google%20Meet%20link%20before%20saving.&add=jessesteckley@gmail.com&location=Google%20Meet",
   cbc: "https://www.cbc.ca/news/canada/manitoba/future-40-manitoba-2025-9.7046845#jesse-steckley",
   iea: "https://businesscouncil.mb.ca/indigenous-education-awards/",
   ccib: "https://www.ccib.ca/supply-change/",
