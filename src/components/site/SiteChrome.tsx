@@ -351,12 +351,12 @@ const APPROACH = [
     ],
   },
   {
-    kicker: "03 — A company I own",
+    kicker: "03 — Capital · Founder & Principal",
     title: "Waaseyak",
     feature: true,
     image: "/images/approach-waaseyak-1100.webp",
     imageFallback: "/images/approach-waaseyak-1100.jpg",
-    line: "Waaseyak is my company — not this consulting practice. Prompt Waaseyak your idea. It generates a high-level business plan, follows up with a preliminary, and books a discovery call so the project starts moving.",
+    line: "I founded Waaseyak and serve as Principal. Prompt us your idea — we generate a high-level business plan, follow up with a preliminary, and book a discovery call soon after so the project starts moving.",
     points: [
       "Prompt your idea to Waaseyak",
       "Receive a high-level business plan",
@@ -372,9 +372,9 @@ export function Approach() {
     <section id="approach" className="below-fold border-t border-border bg-bg py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">01 — Approach</p>
-        <h2 className="max-w-2xl font-display text-2xl text-fg md:text-3xl">How I consult.</h2>
+        <h2 className="max-w-2xl font-display text-2xl text-fg md:text-3xl">Strategy that moves capital.</h2>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-          This site is my personal practice. I advise Indigenous communities and allies on economic reconciliation. Waaseyak, below, is a company I own — the prompt-your-idea path to a plan and a launch.
+          I work as a strategist with Indigenous communities and allies — setting the path, opening capital, and staying close enough that projects actually launch.
         </p>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {APPROACH.map((item) => (
