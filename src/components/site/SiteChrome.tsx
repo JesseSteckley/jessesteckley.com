@@ -745,7 +745,7 @@ export function Contact() {
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
           Whether you are an Indigenous community, government, organization, or ally — if the work is economic reconciliation, reach out.
         </p>
-        <div className="fuse mt-10 rounded-xl p-5" data-fuse>
+        <div className="mt-10">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-subtle">Email</p>
           <a href={`mailto:${SITE.email}`} className="mt-2 inline-block text-xl font-semibold text-accent hover:text-accent-strong sm:text-2xl">
             {SITE.email}
@@ -754,7 +754,8 @@ export function Contact() {
             <button
               type="button"
               onClick={copyEmail}
-              className="inline-flex min-h-11 items-center gap-2 rounded-md border border-border px-4 text-sm font-medium text-fg hover:bg-elevated transition-[background-color] duration-150"
+              data-fuse
+              className={"fuse relative inline-flex min-h-11 items-center gap-2 rounded-md border border-border px-4 text-sm font-medium text-fg hover:bg-elevated transition-[background-color] duration-150" + (copied ? " fuse-pulse" : "")}
             >
               {copied ? <IconCheck /> : null}
               {copied ? "Copied" : "Copy email"}
