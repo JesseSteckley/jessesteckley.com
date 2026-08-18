@@ -88,6 +88,18 @@ function IconCheck() {
   );
 }
 
+
+function spark(kind: "dawn" | "forever") {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const root = document.documentElement;
+  root.classList.remove("egg-dawn", "egg-forever");
+  void root.offsetWidth;
+  root.classList.add(kind === "dawn" ? "egg-dawn" : "egg-forever");
+  window.setTimeout(() => {
+    root.classList.remove("egg-dawn", "egg-forever");
+  }, 1600);
+}
+
 export function SkipLink() {
   return (
     <a
@@ -129,7 +141,12 @@ export function Nav() {
   return (
     <header className="site-header">
       <div className="site-header-inner">
-        <a href="#top" className="site-logo" aria-label="Jesse Steckley — home">
+        <a
+          href="#top"
+          className="site-logo"
+          aria-label="Jesse Steckley — home. The sun holds a dawn."
+          onClick={() => spark("dawn")}
+        >
           <LogoMark />
         </a>
         <nav className="site-nav" aria-label="Primary">
@@ -175,7 +192,9 @@ export function Hero() {
           <h1 className="font-display text-3xl text-fg">{SITE.name}</h1>
           <p className="mt-4 text-xl font-medium text-fg/90 md:text-2xl">{SITE.shortTitle}</p>
           <p className="mt-2 text-sm text-subtle">Founder & Principal, Waaseyak</p>
-          <p className="mt-1 text-sm text-subtle">Aubdauban — New Dawn / Forever Light</p>
+          <button type="button" className="egg-name mt-1 text-sm text-subtle" onClick={() => spark("forever")}>
+            Aubdauban — New Dawn / Forever Light
+          </button>
           <p className="mt-8 max-w-md text-lg leading-relaxed text-muted">
             Economic reconciliation strategist for Indigenous communities and allies — from the plan, to capital, to launch.
           </p>
@@ -219,18 +238,18 @@ export function Stats() {
   return (
     <section aria-label="Selected results" className="border-t border-border bg-surface">
       <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-        <div className="fuse px-5 py-8 sm:px-8" data-fuse>
+        <button type="button" className="fuse px-5 py-8 text-left sm:px-8" data-fuse onClick={() => spark("dawn")}>
           <p className="font-display text-2xl text-fg">530</p>
           <p className="mt-1 text-sm text-muted">Awards annually</p>
-        </div>
-        <div className="fuse px-5 py-8 sm:px-8" data-fuse>
+        </button>
+        <button type="button" className="fuse px-5 py-8 text-left sm:px-8" data-fuse onClick={() => spark("dawn")}>
           <p className="font-display text-2xl text-fg">$1.6M</p>
           <p className="mt-1 text-sm text-muted">Student support</p>
-        </div>
-        <div className="fuse px-5 py-8 sm:px-8" data-fuse>
+        </button>
+        <button type="button" className="fuse px-5 py-8 text-left sm:px-8" data-fuse onClick={() => spark("dawn")}>
           <p className="font-display text-2xl text-fg">Future 40</p>
           <p className="mt-1 text-sm text-muted">CBC Manitoba, 2025</p>
-        </div>
+        </button>
       </div>
     </section>
   );
@@ -402,6 +421,7 @@ type ContribDay = { date: string; count: number; level: number };
 function GitHubContributions() {
   const [days, setDays] = useState<ContribDay[] | null>(null);
   const [total, setTotal] = useState<number | null>(null);
+  const [litDay, setLitDay] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -533,7 +553,12 @@ function GitHubContributions() {
                     width={cell}
                     height={cell}
                     rx={2}
-                    fill={colors[level]}
+                    className="egg-cell"
+                    fill={litDay === day.date ? "#efe6d4" : colors[level]}
+                    onClick={() => {
+                      setLitDay(day.date);
+                      if (day.count > 0) spark("forever");
+                    }}
                   >
                     <title>
                       {day.date}: {day.count} contribution{day.count === 1 ? "" : "s"}
@@ -681,7 +706,10 @@ export function Footer() {
     <footer className="border-t border-border bg-bg py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 text-sm text-subtle sm:flex-row sm:px-6">
         <p>© {new Date().getFullYear()} Jesse Steckley · Waaseyak</p>
-        <p>Winnipeg · Treaty 1 Territory</p>
+        <p className="flex items-center gap-2">
+          Winnipeg · Treaty 1 Territory
+          <button type="button" className="egg-ember" aria-label="A quiet light" onClick={() => spark("forever")} />
+        </p>
       </div>
     </footer>
   );

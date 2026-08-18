@@ -561,3 +561,91 @@ details > summary {
     opacity: 0.45;
   }
 }
+
+
+.egg-name {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.egg-name:hover,
+.egg-name:focus-visible {
+  color: var(--color-accent);
+  text-shadow: 0 0 16px color-mix(in oklab, var(--color-accent) 45%, transparent);
+}
+
+.egg-ember {
+  width: 0.45rem;
+  height: 0.45rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--color-accent) 28%, transparent);
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.egg-ember:hover,
+.egg-ember:focus-visible {
+  opacity: 1;
+  background: var(--color-accent);
+  box-shadow: 0 0 10px color-mix(in oklab, var(--color-accent) 80%, transparent);
+}
+
+.egg-cell {
+  cursor: pointer;
+}
+
+html.egg-dawn::after,
+html.egg-forever::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 70;
+}
+
+html.egg-dawn::after {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--color-accent) 20%, transparent) 0%,
+    color-mix(in oklab, var(--color-accent) 6%, transparent) 22%,
+    transparent 42%
+  );
+  animation: egg-dawn 1.35s ease-out forwards;
+}
+
+html.egg-forever::after {
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 100%,
+    color-mix(in oklab, var(--color-accent) 22%, transparent),
+    transparent 70%
+  );
+  animation: egg-forever 1.45s ease-out forwards;
+}
+
+@keyframes egg-dawn {
+  0% { opacity: 0; transform: translateY(-6%); }
+  18% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(3%); }
+}
+
+@keyframes egg-forever {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.egg-dawn::after,
+  html.egg-forever::after {
+    display: none;
+  }
+}
