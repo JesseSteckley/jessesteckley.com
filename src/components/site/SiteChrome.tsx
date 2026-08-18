@@ -184,15 +184,8 @@ export function Nav() {
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-24 md:pt-28">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-start px-5 pb-16 sm:px-6 md:grid-cols-2 md:gap-10 md:pb-20 lg:gap-14">
-        <div className="fuse w-full rounded-xl" data-fuse>
-          <p className="mb-6 text-xs font-medium uppercase tracking-[0.14em] text-accent">
-            Wasauksing First Nation · Robinson Huron Treaty 1850
-          </p>
-          <h1 className="font-display text-3xl text-fg">{SITE.name}</h1>
-        </div>
-
-        <div className="relative mt-6 flex w-full justify-center md:row-span-2 md:mt-0 md:justify-end">
+      <div className="mx-auto flex max-w-6xl flex-col px-5 pb-16 sm:px-6 md:pb-20">
+        <div className="relative mb-8 flex w-full justify-center md:mb-10 md:justify-end">
           <div className="hero-live-wrap">
             <video
               className="hero-live"
@@ -207,8 +200,12 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="fuse mt-6 w-full rounded-xl md:mt-4" data-fuse>
-          <p className="text-xl font-medium text-fg/90 md:text-2xl">{SITE.shortTitle}</p>
+        <div className="fuse w-full max-w-xl rounded-xl" data-fuse>
+          <p className="mb-6 text-xs font-medium uppercase tracking-[0.14em] text-accent">
+            Wasauksing First Nation · Robinson Huron Treaty 1850
+          </p>
+          <h1 className="font-display text-3xl text-fg">{SITE.name}</h1>
+          <p className="mt-4 text-xl font-medium text-fg/90 md:text-2xl">{SITE.shortTitle}</p>
           <p className="mt-2 text-sm text-subtle">Founder & Principal, Waaseyak</p>
           <button type="button" className="egg-name mt-1 text-sm text-subtle" onClick={() => spark("forever")}>
             Aubdauban — New Dawn / Forever Light
