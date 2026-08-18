@@ -1,10 +1,10 @@
 export const SITE = {
   name: "Jesse Steckley",
   indigenousName: "Aubdauban",
-  title: "Jesse Steckley | Economic Reconciliation Advisor",
-  shortTitle: "Economic Reconciliation Advisor",
+  title: "Jesse Steckley | Economic Reconciliation Strategist",
+  shortTitle: "Economic Reconciliation Strategist",
   description:
-    "Jesse Steckley (Aubdauban) is an Economic Reconciliation Advisor from Wasauksing First Nation. Founder of Waaseyak. He works with Indigenous communities and allies across Canada on the full range of economic reconciliation — not only workforce and procurement.",
+    "Jesse Steckley (Aubdauban) is an Economic Reconciliation Strategist from Wasauksing First Nation. Founder of Waaseyak — where Indigenous communities can get quicker access to capital and launch economic projects. He works with communities and allies across Canada on the full file.",
   url: "https://jessesteckley.com",
   email: "jessesteckley@gmail.com",
   locale: "en_CA",
@@ -51,15 +51,15 @@ export const LINKS = {
 export const FAQ = [
   {
     q: "Who is Jesse Steckley?",
-    a: "Jesse Steckley (Aubdauban — New Dawn / Forever Light) is a member of Wasauksing First Nation and an Economic Reconciliation Advisor. He is the founder of Waaseyak and lives in Winnipeg on Treaty 1 Territory.",
+    a: "Jesse Steckley (Aubdauban — New Dawn / Forever Light) is a member of Wasauksing First Nation and an Economic Reconciliation Strategist. He is the founder of Waaseyak and lives in Winnipeg on Treaty 1 Territory.",
   },
   {
-    q: "What is an Economic Reconciliation Advisor?",
-    a: "An Economic Reconciliation Advisor helps Indigenous communities and allies turn relationship and policy into practical outcomes — workforce, procurement, capital, housing, energy, governance, digital tools, and any other work that builds lasting economic wellbeing.",
+    q: "What is an Economic Reconciliation Strategist?",
+    a: "A strategist who sits with Indigenous communities and allies, sets the path, and stays close enough to move capital and projects — not only write the plan. Workforce, procurement, housing, energy, governance, digital, and whatever else the file requires.",
   },
   {
     q: "What is Waaseyak?",
-    a: "Waaseyak is Jesse Steckley’s practice supporting Indigenous communities and allied organizations on the full range of economic reconciliation — not a single program type or a First Nations-only mandate.",
+    a: "Waaseyak is Jesse’s vehicle for economic reconciliation strategy — and the place Indigenous communities can come for quicker access to capital and a faster path from idea to launched project. Allies work through it too when the work is real.",
   },
   {
     q: "Who do you work with?",

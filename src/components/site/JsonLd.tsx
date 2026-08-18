@@ -73,12 +73,12 @@ export function JsonLd() {
           { "@type": "AdministrativeArea", name: "Manitoba" },
         ],
         serviceType: [
-          "Economic reconciliation advisory",
+          "Economic reconciliation strategy",
           "Indigenous community economic development",
           "Ally and institutional partnership strategy",
         ],
         description:
-          "Advisory for Indigenous communities and allies on the full range of economic reconciliation work across Canada.",
+          "Strategy for Indigenous communities and allies — including quicker access to capital and launching economic projects through Waaseyak.",
         makesOffer: [
           {
             "@type": "Offer",

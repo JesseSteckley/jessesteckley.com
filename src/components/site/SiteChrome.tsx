@@ -129,7 +129,7 @@ export function Hero() {
           <p className="mt-4 text-xl font-medium text-fg/90 md:text-2xl">{SITE.shortTitle}</p>
           <p className="mt-2 text-sm text-subtle">Aubdauban — New Dawn / Forever Light</p>
           <p className="mt-8 max-w-md text-lg leading-relaxed text-muted">
-            Economic reconciliation with Indigenous communities and allies — the full file, not a single program type.
+            Economic reconciliation strategist for Indigenous communities and allies — from the plan, to capital, to launch.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <a
@@ -192,25 +192,40 @@ const APPROACH = [
   {
     kicker: "01 — People",
     title: "People & Capacity",
+    feature: false,
     image: "/images/approach-people-1100.webp",
     imageFallback: "/images/approach-people-1100.jpg",
-    line: "Strong communities start with strong people. Workforce, education, and the relationships that make economic reconciliation real.",
+    line: "Strategy starts with people. Education, workforce, and the relationships that make a project hold after the announcement.",
     points: [
-      "People, education, and workforce when they serve the wider file",
-      "Capacity with communities, governments, and allied organizations",
-      "Healthy systems that support families and the next generation",
+      "Workforce and education as part of a larger strategy",
+      "Capacity with communities, governments, and allies",
+      "Systems that still work for families a generation from now",
     ],
   },
   {
     kicker: "02 — Land",
     title: "Systems that last",
+    feature: false,
     image: "/images/approach-land-1100.webp",
     imageFallback: "/images/approach-land-1100.jpg",
-    line: "Tools and clean systems only create lasting value when they honour land and serve community priorities — including allies ready to do the work properly.",
+    line: "Land, infrastructure, and tools only pay off when they serve community priorities — and allies who will do the work properly.",
     points: [
       "Technology guided by Indigenous priorities and values",
-      "Energy, infrastructure, and capital that support community futures",
+      "Energy and infrastructure that support community futures",
       "Systems designed for health and intergenerational prosperity",
+    ],
+  },
+  {
+    kicker: "03 — Capital",
+    title: "Waaseyak",
+    feature: true,
+    image: "/images/approach-waaseyak-1100.webp",
+    imageFallback: "/images/approach-waaseyak-1100.jpg",
+    line: "Waaseyak is where Indigenous communities get quicker access to capital and a clear path to launch — so economic projects leave the binder and hit the ground.",
+    points: [
+      "Capital pathways that move at the speed of the project",
+      "From strategy to launch, not another planning cycle",
+      "Built for Indigenous communities ready to go — allies welcome when the work is real",
     ],
   },
 ];
@@ -220,13 +235,13 @@ export function Approach() {
     <section id="approach" className="below-fold border-t border-border bg-bg py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">01 — Approach</p>
-        <h2 className="max-w-xl font-display text-2xl text-fg md:text-3xl">Wealth medicine in practice.</h2>
+        <h2 className="max-w-2xl font-display text-2xl text-fg md:text-3xl">Strategy that moves capital.</h2>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-          Real progress happens when Indigenous communities and allies move people, land, and systems together — for wellbeing that lasts more than one funding cycle.
+          I work as a strategist with Indigenous communities and allies — setting the path, opening capital, and staying close enough that projects actually launch.
         </p>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {APPROACH.map((item) => (
-            <article key={item.title} className="case-tile">
+            <article key={item.title} className={item.feature ? "case-tile md:col-span-2" : "case-tile"}>
               <figure>
                 <picture>
                   <source srcSet={item.image} type="image/webp" />
@@ -273,7 +288,7 @@ export function About() {
               , is a nationally recognized Indigenous children’s book illustrator.
             </p>
             <p>
-              After beginning in the trades, Jesse completed the Aboriginal Community and Social Development diploma at Georgian College and continued at Trent University, studying Indigenous Studies with a minor in Business Administration. He later trained in web development at Juno College of Technology (2018–2019), covering HTML, CSS, responsive and accessible design, Sass, and JavaScript. That mix—practical work, Indigenous and business education, and modern web skills—shapes how he approaches economic reconciliation today, including building tools with AI when communities or allies need them.
+              After beginning in the trades, Jesse completed the Aboriginal Community and Social Development diploma at Georgian College and continued at Trent University, studying Indigenous Studies with a minor in Business Administration. He later trained in web development at Juno College of Technology (2018–2019), covering HTML, CSS, responsive and accessible design, Sass, and JavaScript. That mix—practical work, Indigenous and business education, and modern web skills—shapes how he approaches economic reconciliation today, including moving capital and launching projects through Waaseyak when communities are ready to go.
             </p>
             <p>
               Jesse is best known for growing Manitoba’s largest{" "}
@@ -291,7 +306,7 @@ export function About() {
               for leadership in economic reconciliation.
             </p>
             <p>
-              As founder of Waaseyak, Jesse works with Indigenous communities and allies on whatever the economic reconciliation file requires — strategy, people, capital, systems, and the relationships that make them last. He is the husband of Nicola Little, Artist & Cultural Connector from Garden Hill First Nation (Treaty 5), who has more than 15 years in the arts and cultural sector, and the father of Charlie and Zaagaasgeh Lucy. He lives in Winnipeg on Treaty 1 Territory.
+              As founder of Waaseyak, Jesse works as a strategist with Indigenous communities and allies — and Waaseyak is the place communities can come for quicker access to capital and a faster launch of economic projects. He is the husband of Nicola Little, Artist & Cultural Connector from Garden Hill First Nation (Treaty 5), who has more than 15 years in the arts and cultural sector, and the father of Charlie and Zaagaasgeh Lucy. He lives in Winnipeg on Treaty 1 Territory.
             </p>
             <p className="text-base text-subtle">
               This site is a simple point of contact. If you are an Indigenous community or an ally working on economic reconciliation — I’d welcome the conversation.
