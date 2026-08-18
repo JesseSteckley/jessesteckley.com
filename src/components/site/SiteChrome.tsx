@@ -127,7 +127,7 @@ export function Nav() {
     return () => root.removeEventListener("click", onClick);
   }, []);
   return (
-    <header className="site-header fuse" data-fuse>
+    <header className="site-header">
       <div className="site-header-inner">
         <a href="#top" className="site-logo" aria-label="Jesse Steckley — home">
           <LogoMark />

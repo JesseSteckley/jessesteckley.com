@@ -525,14 +525,14 @@ details > summary {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  padding: 1.5px;
+  padding: 1px;
   background: conic-gradient(
     from calc(var(--fuse) * 360deg - 28deg),
-    transparent 0 68%,
-    color-mix(in oklab, var(--color-accent) 0%, transparent) 74%,
-    color-mix(in oklab, var(--color-accent) 45%, transparent) 84%,
-    #efe6d4 90%,
-    var(--color-accent) 94%,
+    transparent 0 78%,
+    color-mix(in oklab, var(--color-accent) 0%, transparent) 83%,
+    color-mix(in oklab, var(--color-accent) 35%, transparent) 88%,
+    #efe6d4 92%,
+    var(--color-accent) 95%,
     transparent 100%
   );
   -webkit-mask:
@@ -542,16 +542,12 @@ details > summary {
   mask-composite: exclude;
   pointer-events: none;
   z-index: 6;
-  opacity: 0.22;
+  opacity: 0.12;
   transition: opacity 280ms ease;
 }
 
 .fuse.is-lit::before {
-  opacity: 1;
-}
-
-.site-header.fuse {
-  border-radius: 0;
+  opacity: 0.62;
 }
 
 @media (prefers-reduced-motion: reduce) {
