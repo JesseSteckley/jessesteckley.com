@@ -4,7 +4,7 @@ export const SITE = {
   title: "Jesse Steckley | Economic Reconciliation Strategist",
   shortTitle: "Economic Reconciliation Strategist",
   description:
-    "Jesse Steckley (Aubdauban) is an Economic Reconciliation Strategist from Wasauksing First Nation. Founder and Principal of Waaseyak — where Indigenous communities can get quicker access to capital and launch economic projects. He works with communities and allies across Canada on the full file.",
+    "Jesse Steckley (Aubdauban) is an Economic Reconciliation Strategist from Wasauksing First Nation. This is his personal consulting practice — Indigenous communities and allies, the full file. He also owns Waaseyak, a separate company where communities can prompt an idea and move toward capital and launch.",
   url: "https://jessesteckley.com",
   email: "jessesteckley@gmail.com",
   locale: "en_CA",
@@ -20,7 +20,7 @@ export const SITE = {
   keywords: [
     "Jesse Steckley",
     "Aubdauban",
-    "Economic Reconciliation Advisor",
+    "Economic Reconciliation Strategist",
     "Indigenous economic development",
     "Indigenous communities",
     "economic reconciliation allies",
@@ -51,15 +51,15 @@ export const LINKS = {
 export const FAQ = [
   {
     q: "Who is Jesse Steckley?",
-    a: "Jesse Steckley (Aubdauban — New Dawn / Forever Light) is a member of Wasauksing First Nation and an Economic Reconciliation Strategist. He is the Founder and Principal of Waaseyak and lives in Winnipeg on Treaty 1 Territory.",
+    a: "Jesse Steckley (Aubdauban — New Dawn / Forever Light) is a member of Wasauksing First Nation and an independent Economic Reconciliation Strategist. He also owns Waaseyak. He lives in Winnipeg on Treaty 1 Territory.",
   },
   {
     q: "What is an Economic Reconciliation Strategist?",
-    a: "A strategist who sits with Indigenous communities and allies, sets the path, and stays close enough to move capital and projects — not only write the plan. Workforce, procurement, housing, energy, governance, digital, and whatever else the file requires.",
+    a: "Independent advisory for Indigenous communities and allies: set the path, stay close to implementation, and take on the full economic reconciliation file — workforce, procurement, housing, energy, governance, digital, or whatever the work requires.",
   },
   {
     q: "What is Waaseyak?",
-    a: "Waaseyak is Jesse Steckley’s firm — he is Founder and Principal. Prompt your idea; Waaseyak generates a high-level business plan, follows up with a preliminary, and books a discovery call soon after so the project can move. Indigenous communities and allies are both welcome when the work is real.",
+    a: "Waaseyak is a company Jesse owns — separate from this personal consulting practice. Prompt Waaseyak your idea; it generates a high-level business plan, follows up with a preliminary, and books a discovery call so the project can move.",
   },
   {
     q: "Who do you work with?",
@@ -67,7 +67,7 @@ export const FAQ = [
   },
   {
     q: "How can I work with Jesse?",
-    a: "Email jessesteckley@gmail.com and prompt your idea. Waaseyak generates a high-level business plan, follows up with a preliminary, and sets a discovery call so the work can start moving. Larger files are scoped so a team can be assembled and finished to the community’s standard.",
+    a: "For personal consulting, email jessesteckley@gmail.com. Bring the file you have. If you want the prompt-your-idea path — high-level plan, preliminary, discovery call — that is Waaseyak, the company Jesse owns.",
   },
   {
     q: "How does a Waaseyak idea start?",

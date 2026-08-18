@@ -263,12 +263,12 @@ export function Hero() {
           </p>
           <h1 className="font-display text-3xl text-fg">{SITE.name}</h1>
           <p className="mt-4 text-xl font-medium text-fg/90 md:text-2xl">{SITE.shortTitle}</p>
-          <p className="mt-2 text-sm text-subtle">Founder & Principal, Waaseyak</p>
+          <p className="mt-2 text-sm text-subtle">Personal consulting · also owns Waaseyak</p>
           <button type="button" className="egg-name mt-1 text-sm text-subtle" onClick={() => spark("forever")}>
             Aubdauban — New Dawn / Forever Light
           </button>
           <p className="mt-8 max-w-md text-lg leading-relaxed text-muted">
-            Economic reconciliation strategist for Indigenous communities and allies — from the plan, to capital, to launch.
+            Independent economic reconciliation consulting for Indigenous communities and allies — the full file, not a single program type.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <a
@@ -352,12 +352,12 @@ const APPROACH = [
     ],
   },
   {
-    kicker: "03 — Capital · Founder & Principal",
+    kicker: "03 — A company I own",
     title: "Waaseyak",
     feature: true,
     image: "/images/approach-waaseyak-1100.webp",
     imageFallback: "/images/approach-waaseyak-1100.jpg",
-    line: "I founded Waaseyak and serve as Principal. Prompt us your idea — we generate a high-level business plan, follow up with a preliminary, and book a discovery call soon after so the project starts moving.",
+    line: "Waaseyak is my company — not this consulting practice. Prompt Waaseyak your idea. It generates a high-level business plan, follows up with a preliminary, and books a discovery call so the project starts moving.",
     points: [
       "Prompt your idea to Waaseyak",
       "Receive a high-level business plan",
@@ -373,9 +373,9 @@ export function Approach() {
     <section id="approach" className="below-fold border-t border-border bg-bg py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">01 — Approach</p>
-        <h2 className="max-w-2xl font-display text-2xl text-fg md:text-3xl">Strategy that moves capital.</h2>
+        <h2 className="max-w-2xl font-display text-2xl text-fg md:text-3xl">How I consult.</h2>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-          I work as a strategist with Indigenous communities and allies — setting the path, opening capital, and staying close enough that projects actually launch.
+          This site is my personal practice. I advise Indigenous communities and allies on economic reconciliation. Waaseyak, below, is a company I own — the prompt-your-idea path to a plan and a launch.
         </p>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {APPROACH.map((item) => (
@@ -431,7 +431,7 @@ export function About() {
               , is a nationally recognized Indigenous children’s book illustrator.
             </p>
             <p>
-              After beginning in the trades, Jesse completed the Aboriginal Community and Social Development diploma at Georgian College and continued at Trent University, studying Indigenous Studies with a minor in Business Administration. He later trained in web development at Juno College of Technology (2018–2019), covering HTML, CSS, responsive and accessible design, Sass, and JavaScript. That mix—practical work, Indigenous and business education, and modern web skills—shapes how he approaches economic reconciliation today, including moving capital and launching projects through Waaseyak when communities are ready to go.
+              After beginning in the trades, Jesse completed the Aboriginal Community and Social Development diploma at Georgian College and continued at Trent University, studying Indigenous Studies with a minor in Business Administration. He later trained in web development at Juno College of Technology (2018–2019), covering HTML, CSS, responsive and accessible design, Sass, and JavaScript. That mix—practical work, Indigenous and business education, and modern web skills—shapes how he approaches economic reconciliation today, including independent advisory and, through Waaseyak — a company he owns — a prompt-your-idea path when a community is ready to launch.
             </p>
             <p>
               Jesse is best known for growing Manitoba’s largest{" "}
@@ -449,7 +449,7 @@ export function About() {
               for leadership in economic reconciliation.
             </p>
             <p>
-              As Founder and Principal of Waaseyak, Jesse works as a strategist with Indigenous communities and allies — and Waaseyak is the place communities can come for quicker access to capital and a faster launch of economic projects. He is the husband of Nicola Little, Artist & Cultural Connector from Garden Hill First Nation (Treaty 5), who has more than 15 years in the arts and cultural sector, and the father of Charlie and Zaagaasgeh Lucy. He lives in Winnipeg on Treaty 1 Territory.
+              Jesse’s personal consulting sits with Indigenous communities and allies on the full economic reconciliation file. He also owns Waaseyak, a separate company for prompting an idea, generating a high-level plan, and moving toward capital and launch. He is the husband of Nicola Little, Artist & Cultural Connector from Garden Hill First Nation (Treaty 5), who has more than 15 years in the arts and cultural sector, and the father of Charlie and Zaagaasgeh Lucy. He lives in Winnipeg on Treaty 1 Territory.
             </p>
             <p className="text-base text-subtle">
               This site is a simple point of contact. If you are an Indigenous community or an ally working on economic reconciliation — I’d welcome the conversation.
@@ -743,7 +743,7 @@ export function Contact() {
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">05 — Contact</p>
         <h2 className="font-display text-2xl text-fg">Let’s talk</h2>
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
-          Whether you are an Indigenous community, government, organization, or ally — if the work is economic reconciliation, reach out.
+          For personal consulting, write directly. If you want to prompt an idea into a plan and a discovery call, that path is Waaseyak — a company I own.
         </p>
         <div className="mt-10">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-subtle">Email</p>
@@ -786,7 +786,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-bg py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 text-sm text-subtle sm:flex-row sm:px-6">
-        <p>© {new Date().getFullYear()} Jesse Steckley · Waaseyak</p>
+        <p>© {new Date().getFullYear()} Jesse Steckley · personal consulting. Waaseyak is a separate company.</p>
         <p className="flex items-center gap-2">
           Winnipeg · Treaty 1 Territory
           <button type="button" className="egg-ember" aria-label="A quiet light" onClick={() => spark("forever")} />

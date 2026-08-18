@@ -22,7 +22,7 @@ export const Route = createRootRoute({
       { name: "keywords", content: SITE.keywords.join(", ") },
       { name: "author", content: SITE.name },
       { name: "creator", content: SITE.name },
-      { name: "publisher", content: "Waaseyak" },
+      { name: "publisher", content: SITE.name },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "googlebot", content: "index, follow, max-image-preview:large" },
       { name: "theme-color", content: SITE.themeColor },
