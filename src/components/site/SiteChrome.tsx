@@ -263,8 +263,7 @@ export function Hero() {
           </p>
           <h1 className="font-display text-3xl text-fg">{SITE.name}</h1>
           <p className="mt-4 text-xl font-medium text-fg/90 md:text-2xl">{SITE.shortTitle}</p>
-          <p className="mt-2 text-sm text-subtle">Personal consulting · also owns Waaseyak</p>
-          <button type="button" className="egg-name mt-1 text-sm text-subtle" onClick={() => spark("forever")}>
+          <button type="button" className="egg-name mt-2 text-sm text-subtle" onClick={() => spark("forever")}>
             Aubdauban — New Dawn / Forever Light
           </button>
           <p className="mt-8 max-w-md text-lg leading-relaxed text-muted">
