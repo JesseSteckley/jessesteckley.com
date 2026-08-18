@@ -2,11 +2,11 @@ export type AnalyticsEvent = "discovery_click" | "email_copy";
 
 declare global {
   interface Window {
-    plausible?: (event: string, options?: { props?: Record<string, string> }) => void;
+    plausible?: (event: string) => void;
   }
 }
 
-export function track(event: AnalyticsEvent, props?: Record<string, string>) {
+export function track(event: AnalyticsEvent) {
   if (typeof window === "undefined") return;
-  window.plausible?.(event, props ? { props } : undefined);
+  window.plausible?.(event);
 }

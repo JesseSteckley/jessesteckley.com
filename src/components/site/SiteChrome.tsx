@@ -276,7 +276,7 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-fg hover:bg-accent-strong"
-              onClick={() => track("discovery_click", { place: "hero" })}
+              onClick={() => track("discovery_click")}
             >
               Schedule a discovery call
               <IconArrow />
@@ -409,7 +409,7 @@ export function Approach() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => {
-                      if (item.href === LINKS.discovery) track("discovery_click", { place: item.title });
+                      if (item.href === LINKS.discovery) track("discovery_click");
                     }}
                   >
                     {item.cta}
@@ -772,7 +772,7 @@ export function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-11 items-center gap-2 rounded-md bg-accent px-4 text-sm font-semibold text-accent-fg hover:bg-accent-strong"
-              onClick={() => track("discovery_click", { place: "contact" })}
+              onClick={() => track("discovery_click")}
             >
               Schedule a discovery call
               <IconArrow />
