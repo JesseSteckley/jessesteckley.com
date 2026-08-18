@@ -550,6 +550,26 @@ details > summary {
   opacity: 0.62;
 }
 
+details.fuse[open]::before {
+  opacity: 0.95;
+  padding: 1.5px;
+}
+
+details.fuse.fuse-pulse::before {
+  animation: fuse-hit 0.75s ease-out;
+}
+
+@keyframes fuse-hit {
+  0% {
+    opacity: 1;
+    filter: brightness(1.8);
+  }
+  100% {
+    opacity: 0.9;
+    filter: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fuse::before {
     background: linear-gradient(

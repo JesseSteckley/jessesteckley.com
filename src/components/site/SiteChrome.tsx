@@ -695,7 +695,18 @@ export function Faq() {
         <h2 className="font-display text-2xl text-fg">Common questions</h2>
         <div className="mt-10 divide-y divide-border border-y border-border">
           {FAQ.map((item) => (
-            <details key={item.q} className="fuse group rounded-md py-5" data-fuse>
+            <details
+              key={item.q}
+              className="fuse group rounded-md py-5"
+              data-fuse
+              onToggle={(event) => {
+                const el = event.currentTarget;
+                el.classList.remove("fuse-pulse");
+                void el.offsetWidth;
+                el.classList.add("fuse-pulse");
+                window.setTimeout(() => el.classList.remove("fuse-pulse"), 750);
+              }}
+            >
               <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-medium text-fg">
                 {item.q}
                 <span className="text-subtle transition-transform duration-150 group-open:rotate-45">+</span>
