@@ -313,11 +313,11 @@ export function Stats() {
         </button>
       </div>
       <p className="mx-auto max-w-6xl px-5 pb-6 pt-1 text-xs leading-relaxed text-subtle sm:px-8">
-        The Indigenous Education Awards are a{" "}
+        The Indigenous Education Awards are administered by the{" "}
         <a href={LINKS.iea} target="_blank" rel="noopener noreferrer" className="underline-offset-2 hover:text-accent hover:underline">
           Business Council of Manitoba
-        </a>{" "}
-        program. I led its growth. I do not own it.
+        </a>
+        . I helped BCM lead the program’s growth across Manitoba.
       </p>
     </section>
   );
@@ -473,7 +473,7 @@ const IMPACT = [
     sub: "BCM · Indigenous Education Awards",
     href: LINKS.iea,
     logo: "/images/logo-iea.png",
-    body: "Led growth of the Business Council of Manitoba’s Indigenous Education Awards — the province’s largest — from 100 awards ($300,000) to 530 awards and $1.6M in annual student support. The program belongs to BCM; I grew it.",
+    body: "The Indigenous Education Awards are administered by the Business Council of Manitoba. I helped BCM lead the program’s growth across Manitoba — from 100 awards ($300,000) to 530 awards and $1.6M in annual student support.",
   },
   {
     title: "Procurement",
