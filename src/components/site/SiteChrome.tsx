@@ -271,10 +271,12 @@ export function Hero() {
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <a
-              href="#contact"
+              href={LINKS.discovery}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-fg hover:bg-accent-strong"
             >
-              Get in touch
+              Schedule a discovery call
               <IconArrow />
             </a>
             <a
