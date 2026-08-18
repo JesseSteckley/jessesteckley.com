@@ -441,7 +441,7 @@ export function About() {
               , is a nationally recognized Indigenous children’s book illustrator.
             </p>
             <p>
-              After beginning in the trades, Jesse completed the Aboriginal Community and Social Development diploma at Georgian College and continued at Trent University, studying Indigenous Studies with a minor in Business Administration. He later trained in web development at Juno College of Technology (2018–2019), covering HTML, CSS, responsive and accessible design, Sass, and JavaScript. That mix—practical work, Indigenous and business education, and modern web skills—shapes how he approaches economic reconciliation today, including independent advisory and, through Waaseyak — a company he owns — a prompt-your-idea path when a community is ready to launch.
+              After beginning in the trades, Jesse completed the Aboriginal Community and Social Development diploma at Georgian College and studied Indigenous Studies with a Business Administration minor at Trent University. He later trained in web development at Juno College of Technology — enough to build when asked, not a second career in code.
             </p>
             <p>
               Jesse is best known for growing Manitoba’s largest{" "}
