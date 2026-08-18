@@ -59,7 +59,7 @@ export const FAQ = [
   },
   {
     q: "What is Waaseyak?",
-    a: "Waaseyak is Jesse Steckley’s firm — he is Founder and Principal. It is the vehicle for economic reconciliation strategy — and the place Indigenous communities can come for quicker access to capital and a faster path from idea to launched project. Allies work through it too when the work is real.",
+    a: "Waaseyak is Jesse Steckley’s firm — he is Founder and Principal. Prompt your idea; Waaseyak generates a high-level business plan, follows up with a preliminary, and books a discovery call soon after so the project can move. Indigenous communities and allies are both welcome when the work is real.",
   },
   {
     q: "Who do you work with?",
@@ -67,7 +67,11 @@ export const FAQ = [
   },
   {
     q: "How can I work with Jesse?",
-    a: "Email jessesteckley@gmail.com. Bring the file you have: strategy, workforce, procurement, housing, energy, digital, or something still taking shape. When a site or app is needed, that can be built too. Larger work is scoped so a team can be assembled and finished to the community’s standard.",
+    a: "Email jessesteckley@gmail.com and prompt your idea. Waaseyak generates a high-level business plan, follows up with a preliminary, and sets a discovery call so the work can start moving. Larger files are scoped so a team can be assembled and finished to the community’s standard.",
+  },
+  {
+    q: "How does a Waaseyak idea start?",
+    a: "Send or prompt your idea to Waaseyak. We generate a high-level business plan, follow up with a preliminary, and hold a discovery call soon after so your project can get moving.",
   },
   {
     q: "Do you build websites or apps?",

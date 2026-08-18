@@ -222,12 +222,14 @@ const APPROACH = [
     feature: true,
     image: "/images/approach-waaseyak-1100.webp",
     imageFallback: "/images/approach-waaseyak-1100.jpg",
-    line: "I founded Waaseyak and serve as Principal. It is where Indigenous communities get quicker access to capital and a clear path to launch — so economic projects leave the binder and hit the ground.",
+    line: "I founded Waaseyak and serve as Principal. Prompt us your idea — we generate a high-level business plan, follow up with a preliminary, and book a discovery call soon after so the project starts moving.",
     points: [
-      "Capital pathways that move at the speed of the project",
-      "From strategy to launch, not another planning cycle",
-      "Built for Indigenous communities ready to go — allies welcome when the work is real",
+      "Prompt your idea to Waaseyak",
+      "Receive a high-level business plan",
+      "Preliminary follow-up, then a discovery call to get you launched",
     ],
+    cta: "Prompt your idea",
+    href: "mailto:jessesteckley@gmail.com?subject=Waaseyak%20idea",
   },
 ];
 
@@ -258,6 +260,11 @@ export function Approach() {
                     <span key={point}>{point}</span>
                   ))}
                 </div>
+                {"cta" in item && item.cta ? (
+                  <a href={item.href} className="case-cta">
+                    {item.cta}
+                  </a>
+                ) : null}
               </div>
             </article>
           ))}
