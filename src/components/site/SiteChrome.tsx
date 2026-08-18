@@ -760,7 +760,16 @@ export function Contact() {
           <a href={`mailto:${SITE.email}`} className="mt-2 inline-block text-xl font-semibold text-accent hover:text-accent-strong sm:text-2xl">
             {SITE.email}
           </a>
-          <div className="mt-4">
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <a
+              href={LINKS.discovery}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center gap-2 rounded-md bg-accent px-4 text-sm font-semibold text-accent-fg hover:bg-accent-strong"
+            >
+              Schedule a discovery call
+              <IconArrow />
+            </a>
             <button
               type="button"
               onClick={copyEmail}
