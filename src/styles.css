@@ -512,3 +512,68 @@ details > summary {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+.scroll-light {
+  cursor: pointer;
+  transition:
+    box-shadow 420ms ease,
+    transform 420ms ease;
+}
+
+.scroll-embers {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.95rem;
+  z-index: 3;
+  display: flex;
+  gap: 0.35rem;
+  pointer-events: none;
+}
+
+.scroll-embers i {
+  display: block;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--color-fg) 22%, transparent);
+  box-shadow: none;
+  transition:
+    background 380ms ease,
+    box-shadow 380ms ease,
+    transform 380ms ease;
+}
+
+.scroll-light.is-lit {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--color-accent) 55%, transparent),
+    0 12px 40px color-mix(in oklab, var(--color-accent) 14%, transparent);
+  transform: translateY(-2px);
+}
+
+.scroll-light.is-lit .scroll-embers i {
+  background: var(--color-accent);
+  box-shadow: 0 0 10px color-mix(in oklab, var(--color-accent) 80%, transparent);
+}
+
+.scroll-light.is-lit .scroll-embers i:nth-child(2) {
+  transition-delay: 70ms;
+}
+
+.scroll-light.is-lit .scroll-embers i:nth-child(3) {
+  transition-delay: 140ms;
+}
+
+.scroll-light:hover {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--color-accent) 70%, transparent),
+    0 16px 46px color-mix(in oklab, var(--color-accent) 18%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-light,
+  .scroll-embers i {
+    transition: none;
+    transform: none;
+  }
+}

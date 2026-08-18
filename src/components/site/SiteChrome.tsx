@@ -8,6 +8,39 @@ const NAV = [
   { href: "#contact", label: "Contact" },
 ];
 
+function ScrollEmbers() {
+  return (
+    <span className="scroll-embers" aria-hidden>
+      <i />
+      <i />
+      <i />
+    </span>
+  );
+}
+
+export function ScrollLights() {
+  useEffect(() => {
+    const nodes = Array.from(document.querySelectorAll<HTMLElement>("[data-scroll-light]"));
+    if (!nodes.length) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      nodes.forEach((n) => n.classList.add("is-lit"));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          entry.target.classList.toggle("is-lit", entry.isIntersecting && entry.intersectionRatio >= 0.28);
+        }
+      },
+      { threshold: [0.15, 0.28, 0.45, 0.7], rootMargin: "-12% 0px -16% 0px" },
+    );
+    nodes.forEach((n) => io.observe(n));
+    return () => io.disconnect();
+  }, []);
+  return null;
+}
+
 function IconArrow({ className }: { className?: string }) {
   return (
     <svg className={className} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
@@ -244,7 +277,8 @@ export function Approach() {
         </p>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {APPROACH.map((item) => (
-            <article key={item.title} className={item.feature ? "case-tile md:col-span-2" : "case-tile"}>
+            <article key={item.title} data-scroll-light className={(item.feature ? "case-tile md:col-span-2" : "case-tile") + " scroll-light"}>
+              <ScrollEmbers />
               <figure>
                 <picture>
                   <source srcSet={item.image} type="image/webp" />
@@ -527,8 +561,10 @@ export function Impact() {
               href={card.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col rounded-xl bg-elevated p-6 shadow-[0_0_0_1px_color-mix(in_oklab,var(--color-fg)_10%,transparent)] transition-[box-shadow] duration-150 hover:shadow-[0_0_0_1px_color-mix(in_oklab,var(--color-accent)_45%,transparent)]"
+              data-scroll-light
+              className="scroll-light relative group flex flex-col rounded-xl bg-elevated p-6 shadow-[0_0_0_1px_color-mix(in_oklab,var(--color-fg)_10%,transparent)]"
             >
+              <ScrollEmbers />
               <div className="flex items-start justify-between gap-3">
                 <img src={card.logo} alt="" width={72} height={28} className="h-7 w-auto object-contain opacity-90" />
                 <IconArrow className="text-subtle group-hover:text-accent" />

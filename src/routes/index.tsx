@@ -8,6 +8,7 @@ import {
   Hero,
   Impact,
   Nav,
+  ScrollLights,
   SkipLink,
   Stats,
 } from "@/components/site/SiteChrome";
@@ -23,6 +24,7 @@ function Home() {
       <JsonLd />
       <SkipLink />
       <Nav />
+      <ScrollLights />
       <main id="main">
         <Hero />
         <Stats />
