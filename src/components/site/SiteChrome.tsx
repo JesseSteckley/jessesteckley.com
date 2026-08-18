@@ -818,6 +818,13 @@ export function Footer() {
           <button type="button" className="egg-ember" aria-label="A quiet light" onClick={() => spark("forever")} />
         </p>
       </div>
+      <p className="mx-auto mt-4 max-w-6xl px-5 text-center text-xs leading-relaxed text-subtle sm:px-6">
+        Privacy: this site uses{" "}
+        <a href="https://plausible.io/privacy" target="_blank" rel="noopener noreferrer" className="underline-offset-2 hover:text-accent hover:underline">
+          Plausible
+        </a>{" "}
+        for visit counts — no cookies, no ads, no personal profiles. Discovery calls are booked in Google Calendar. Email is only used to reply.
+      </p>
     </footer>
   );
 }
