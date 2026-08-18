@@ -372,9 +372,9 @@ export function Approach() {
     <section id="approach" className="below-fold border-t border-border bg-bg py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">01 — Approach</p>
-        <h2 className="max-w-2xl font-display text-2xl text-fg md:text-3xl">Strategy that moves capital.</h2>
+        <h2 className="max-w-2xl font-display text-2xl text-fg md:text-3xl">Wealth medicine in practice.</h2>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-          I work as a strategist with Indigenous communities and allies — setting the path, opening capital, and staying close enough that projects actually launch.
+          Real progress happens when Indigenous communities and allies move people, land, and systems together — for wellbeing that lasts more than one funding cycle.
         </p>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {APPROACH.map((item) => (
