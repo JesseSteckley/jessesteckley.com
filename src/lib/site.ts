@@ -41,8 +41,7 @@ export const SITE = {
 } as const;
 
 export const LINKS = {
-  discovery:
-    "https://calendar.app.google/bCcA1PA8MMFFD4UGA",
+  discovery: "https://calendar.app.google/bCcA1PA8MMFFD4UGA",
   cbc: "https://www.cbc.ca/news/canada/manitoba/future-40-manitoba-2025-9.7046845#jesse-steckley",
   iea: "https://businesscouncil.mb.ca/indigenous-education-awards/",
   ccib: "https://www.ccib.ca/supply-change/",
@@ -53,30 +52,26 @@ export const LINKS = {
 export const FAQ = [
   {
     q: "Who is Jesse Steckley?",
-    a: "Jesse Steckley (Aubdauban — New Dawn / Forever Light) is a member of Wasauksing First Nation and an independent Economic Reconciliation Strategist. He also owns Waaseyak. He lives in Winnipeg on Treaty 1 Territory.",
+    a: "Jesse Steckley (Aubdauban — New Dawn / Forever Light) is a member of Wasauksing First Nation and an Economic Reconciliation Strategist. He lives in Winnipeg on Treaty 1 Territory.",
   },
   {
     q: "What is an Economic Reconciliation Strategist?",
-    a: "Independent advisory for Indigenous communities and allies: set the path, stay close to implementation, and take on the full economic reconciliation file — workforce, procurement, housing, energy, governance, digital, or whatever the work requires.",
-  },
-  {
-    q: "What is Waaseyak?",
-    a: "Waaseyak is a company Jesse owns — separate from this personal consulting practice. Prompt Waaseyak your idea; it generates a high-level business plan, follows up with a preliminary, and books a discovery call so the project can move.",
+    a: "Independent advisory for Indigenous communities and allies: set the path, stay close to implementation, and take on the full file — people, systems, land, capital, or whatever the work requires. Not a single program type.",
   },
   {
     q: "Who do you work with?",
-    a: "Indigenous communities and governments, and allies — companies, institutions, funders, and public partners who want to do the work well. The mandate is economic reconciliation, not a single sector.",
+    a: "Indigenous communities and governments, and allies — companies, institutions, funders, and public partners who want to do the work well.",
   },
   {
-    q: "How can I work with Jesse?",
-    a: "For personal consulting, email jessesteckley@gmail.com. Bring the file you have. If you want the prompt-your-idea path — high-level plan, preliminary, discovery call — that is Waaseyak, the company Jesse owns.",
+    q: "How do we start?",
+    a: "Book a 30-minute Google Meet discovery call from this site — that is the consulting path. Bring the file as it is. If you are not ready to pick a time, email jessesteckley@gmail.com. If you want to prompt an idea into a high-level business plan, that is Waaseyak, a company Jesse owns.",
   },
   {
-    q: "How does a Waaseyak idea start?",
-    a: "Send or prompt your idea to Waaseyak. We generate a high-level business plan, follow up with a preliminary, and hold a discovery call soon after so your project can get moving.",
+    q: "What is Waaseyak?",
+    a: "A company Jesse owns, separate from this personal practice. Prompt Waaseyak your idea. It generates a high-level business plan, follows up with a preliminary, and books a discovery call so the project can move.",
   },
   {
     q: "Do you build websites or apps?",
-    a: "Yes, when they serve Indigenous communities or allied partners. Jesse has web-development training from Juno College of Technology and uses AI to help design, build, and launch. Smaller projects can be built directly; larger ones are priced so a team can stay on until the work meets the community’s standard.",
+    a: "Yes, when they serve Indigenous communities or allied partners. Jesse trained in web development at Juno College of Technology and uses AI to help design, build, and launch. Smaller projects can be built directly; larger ones are scoped so a team can stay until the work meets the community’s standard.",
   },
 ] as const;
