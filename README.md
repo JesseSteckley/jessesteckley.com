@@ -1,6 +1,6 @@
 # Jesse Steckley
 
-Personal site for **Jesse Steckley (Aubdauban)** — Economic Reconciliation Strategist from Wasauksing First Nation (Robinson Huron Treaty 1850). Founder of [Waaseyak](https://jessesteckley.com). Based in Winnipeg, Treaty 1 Territory.
+Personal site for **Jesse Steckley (Aubdauban)** — Economic Reconciliation Strategist from Wasauksing First Nation (Robinson Huron Treaty 1850). Founder and Principal of [Waaseyak](https://jessesteckley.com). Based in Winnipeg, Treaty 1 Territory.
 
 **Live:** [jessesteckley.com](https://jessesteckley.com)
 

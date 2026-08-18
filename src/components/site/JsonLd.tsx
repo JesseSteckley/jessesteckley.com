@@ -12,7 +12,7 @@ export function JsonLd() {
         familyName: "Steckley",
         additionalName: SITE.indigenousName,
         alternateName: ["Aubdauban", "Jesse Steckley Aubdauban"],
-        jobTitle: SITE.shortTitle,
+        jobTitle: `${SITE.shortTitle}; Founder & Principal, Waaseyak`,
         description: SITE.description,
         url: SITE.url,
         email: SITE.email,

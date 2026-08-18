@@ -127,7 +127,8 @@ export function Hero() {
           </p>
           <h1 className="font-display text-3xl text-fg">{SITE.name}</h1>
           <p className="mt-4 text-xl font-medium text-fg/90 md:text-2xl">{SITE.shortTitle}</p>
-          <p className="mt-2 text-sm text-subtle">Aubdauban — New Dawn / Forever Light</p>
+          <p className="mt-2 text-sm text-subtle">Founder & Principal, Waaseyak</p>
+          <p className="mt-1 text-sm text-subtle">Aubdauban — New Dawn / Forever Light</p>
           <p className="mt-8 max-w-md text-lg leading-relaxed text-muted">
             Economic reconciliation strategist for Indigenous communities and allies — from the plan, to capital, to launch.
           </p>
@@ -216,12 +217,12 @@ const APPROACH = [
     ],
   },
   {
-    kicker: "03 — Capital",
+    kicker: "03 — Capital · Founder & Principal",
     title: "Waaseyak",
     feature: true,
     image: "/images/approach-waaseyak-1100.webp",
     imageFallback: "/images/approach-waaseyak-1100.jpg",
-    line: "Waaseyak is where Indigenous communities get quicker access to capital and a clear path to launch — so economic projects leave the binder and hit the ground.",
+    line: "I founded Waaseyak and serve as Principal. It is where Indigenous communities get quicker access to capital and a clear path to launch — so economic projects leave the binder and hit the ground.",
     points: [
       "Capital pathways that move at the speed of the project",
       "From strategy to launch, not another planning cycle",
@@ -306,7 +307,7 @@ export function About() {
               for leadership in economic reconciliation.
             </p>
             <p>
-              As founder of Waaseyak, Jesse works as a strategist with Indigenous communities and allies — and Waaseyak is the place communities can come for quicker access to capital and a faster launch of economic projects. He is the husband of Nicola Little, Artist & Cultural Connector from Garden Hill First Nation (Treaty 5), who has more than 15 years in the arts and cultural sector, and the father of Charlie and Zaagaasgeh Lucy. He lives in Winnipeg on Treaty 1 Territory.
+              As Founder and Principal of Waaseyak, Jesse works as a strategist with Indigenous communities and allies — and Waaseyak is the place communities can come for quicker access to capital and a faster launch of economic projects. He is the husband of Nicola Little, Artist & Cultural Connector from Garden Hill First Nation (Treaty 5), who has more than 15 years in the arts and cultural sector, and the father of Charlie and Zaagaasgeh Lucy. He lives in Winnipeg on Treaty 1 Territory.
             </p>
             <p className="text-base text-subtle">
               This site is a simple point of contact. If you are an Indigenous community or an ally working on economic reconciliation — I’d welcome the conversation.
