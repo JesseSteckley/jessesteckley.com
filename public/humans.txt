@@ -1,7 +1,7 @@
 /* TEAM */
 Name: Jesse Steckley
 Indigenous name: Aubdauban
-Role: Economic Reconciliation Advisor
+Role: Economic Reconciliation Strategist
 Organization: Waaseyak
 Site: https://jessesteckley.com
 Location: Winnipeg, Treaty 1 Territory
