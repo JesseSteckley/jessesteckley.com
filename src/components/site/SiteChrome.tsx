@@ -182,19 +182,27 @@ export function Nav() {
 }
 
 
+function formatCount(value: number, kind: "number" | "money", decimals: number) {
+  if (kind === "money") {
+    if (value < 1_000_000) return `$${Math.round(value / 1000)}K`;
+    return `$${(value / 1_000_000).toFixed(1)}M`;
+  }
+  return Math.round(value).toLocaleString("en-CA");
+}
+
 function CountUp({
+  from = 0,
   to,
-  prefix = "",
-  suffix = "",
+  kind = "number",
   decimals = 0,
 }: {
+  from?: number;
   to: number;
-  prefix?: string;
-  suffix?: string;
+  kind?: "number" | "money";
   decimals?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(from);
 
   useEffect(() => {
     const node = ref.current;
@@ -213,7 +221,7 @@ function CountUp({
         const tick = (now: number) => {
           const t = Math.min(1, (now - start) / duration);
           const eased = 1 - (1 - t) ** 3;
-          setValue(to * eased);
+          setValue(from + (to - from) * eased);
           if (t < 1) frame = window.requestAnimationFrame(tick);
         };
         frame = window.requestAnimationFrame(tick);
@@ -225,16 +233,9 @@ function CountUp({
       io.disconnect();
       if (frame) window.cancelAnimationFrame(frame);
     };
-  }, [to]);
+  }, [from, to]);
 
-  const shown = decimals > 0 ? value.toFixed(decimals) : Math.round(value).toLocaleString("en-CA");
-  return (
-    <span ref={ref}>
-      {prefix}
-      {shown}
-      {suffix}
-    </span>
-  );
+  return <span ref={ref}>{formatCount(value, kind, decimals)}</span>;
 }
 
 export function Hero() {
@@ -297,13 +298,13 @@ export function Stats() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
         <button type="button" className="fuse px-5 py-8 text-left sm:px-8" data-fuse onClick={() => spark("dawn")} aria-label="Grew BCM Indigenous Education Awards from 100 to 530 awards a year">
           <p className="font-display text-2xl text-fg tabular-nums">
-            <CountUp to={530} />
+            <CountUp from={100} to={530} />
           </p>
           <p className="mt-1 text-sm text-muted">Awards a year — grown from 100</p>
         </button>
         <button type="button" className="fuse px-5 py-8 text-left sm:px-8" data-fuse onClick={() => spark("dawn")} aria-label="Grew annual student support from 300 thousand to 1.6 million dollars">
           <p className="font-display text-2xl text-fg tabular-nums">
-            <CountUp to={1.6} prefix="$" suffix="M" decimals={1} />
+            <CountUp from={300_000} to={1_600_000} kind="money" />
           </p>
           <p className="mt-1 text-sm text-muted">Annual student support — from $300K</p>
         </button>
