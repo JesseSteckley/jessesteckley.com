@@ -241,54 +241,18 @@ function CountUp({
 
 
 function HeroLive() {
-  const aRef = useRef<HTMLVideoElement>(null);
-  const bRef = useRef<HTMLVideoElement>(null);
-  const activeRef = useRef<"a" | "b">("a");
-  const [front, setFront] = useState<"a" | "b">("a");
-  const [under, setUnder] = useState<"a" | "b" | null>(null);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const fadeMs = 90;
-    let fading = false;
-    const id = window.setInterval(() => {
-      const key = activeRef.current;
-      const lead = key === "a" ? aRef.current : bRef.current;
-      const next = key === "a" ? bRef.current : aRef.current;
-      if (!lead?.duration || !next || fading) return;
-      if (lead.duration - lead.currentTime > 0.09) return;
-      fading = true;
-      const nextKey = key === "a" ? "b" : "a";
-      next.currentTime = 0;
-      void next.play();
-      setUnder(nextKey);
-      window.requestAnimationFrame(() => {
-        window.requestAnimationFrame(() => {
-          activeRef.current = nextKey;
-          setFront(nextKey);
-          setUnder(null);
-        });
-      });
-      window.setTimeout(() => {
-        lead.pause();
-        lead.currentTime = 0;
-        fading = false;
-      }, fadeMs);
-    }, 30);
-    return () => window.clearInterval(id);
-  }, []);
-
-  const src = <source src="/jesse-live.mp4" type="video/mp4" />;
-  const layer = (id: "a" | "b") =>
-    "hero-live" + (front === id ? " is-front" : "") + (under === id ? " is-under" : "");
-
   return (
     <div className="hero-live-wrap">
-      <video ref={aRef} className={layer("a")} autoPlay muted playsInline preload="auto" poster="/images/jesse-live-poster.webp">
-        {src}
-      </video>
-      <video ref={bRef} className={layer("b")} muted playsInline preload="auto">
-        {src}
+      <video
+        className="hero-live is-front"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/images/jesse-live-poster.webp"
+      >
+        <source src="/jesse-live.mp4" type="video/mp4" />
       </video>
     </div>
   );
