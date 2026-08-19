@@ -324,7 +324,6 @@ details > summary {
   opacity: 0;
   transition: opacity 420ms ease-in-out;
   z-index: 0;
-  transform: scaleX(-1);
   -webkit-mask-image:
     radial-gradient(ellipse 78% 84% at 48% 28%, #000 48%, transparent 84%),
     linear-gradient(to bottom, #000 0 54%, transparent 94%);
