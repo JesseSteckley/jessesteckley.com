@@ -368,6 +368,9 @@ details > summary {
     transition: none;
   }
 }
+
+@media (max-width: 767px) {
+  .hero-live-wrap {
     max-width: 16.5rem;
     margin-inline: auto;
   }
