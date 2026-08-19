@@ -251,14 +251,14 @@ function HeroLive() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     setSoft(!reduce);
     if (reduce) return;
-    const fadeMs = 300;
+    const fadeMs = 160;
     let fading = false;
     const id = window.setInterval(() => {
       const key = activeRef.current;
       const lead = key === "a" ? aRef.current : bRef.current;
       const next = key === "a" ? bRef.current : aRef.current;
       if (!lead?.duration || !next || fading) return;
-      if (lead.duration - lead.currentTime > fadeMs / 1000 + 0.04) return;
+      if (lead.duration - lead.currentTime > 0.16) return;
       fading = true;
       next.currentTime = 0;
       void next.play();
