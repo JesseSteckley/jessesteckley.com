@@ -322,7 +322,7 @@ details > summary {
   object-position: center top;
   background: transparent;
   opacity: 0;
-  transition: opacity 420ms ease-in-out;
+  transition: opacity 90ms linear;
   z-index: 0;
   -webkit-mask-image:
     radial-gradient(ellipse 78% 84% at 48% 28%, #000 48%, transparent 84%),
