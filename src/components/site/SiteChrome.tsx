@@ -372,11 +372,11 @@ const APPROACH = [
     feature: true,
     image: "/images/approach-waaseyak-1100.webp",
     imageFallback: "/images/approach-waaseyak-1100.jpg",
-    line: "I founded Waaseyak and serve as Principal. It exists so Indigenous communities can get to capital faster and launch economic projects on their own timeline.",
+    line: "I founded Waaseyak and serve as Principal. It is an Indigenous-owned and Indigenous-led consulting firm that provides Indigenous communities, First Nations, Métis, and Inuit with extra capacity and scalable economic solutions to build lasting community prosperity.",
     points: [
-      "Quicker access to capital for Nations",
-      "Support to launch community economic projects",
-      "Built for communities ready to move",
+      "Extra capacity for Indigenous communities",
+      "Scalable economic solutions",
+      "Lasting community prosperity",
     ],
     cta: "Get in touch",
     href: "mailto:jessesteckley@gmail.com?subject=Waaseyak",
@@ -472,7 +472,7 @@ export function About() {
               for leadership in economic reconciliation.
             </p>
             <p>
-              Jesse works with Indigenous communities and allies on the full economic reconciliation file. He founded Waaseyak to help Nations reach capital faster and launch economic projects. He is the husband of Nicola Little, Artist & Cultural Connector from Garden Hill First Nation (Treaty 5), who has more than 15 years in the arts and cultural sector, and the father of Charlie and Zaagaasgeh Lucy. He lives in Winnipeg on Treaty 1 Territory.
+              Jesse works with Indigenous communities and allies on the full economic reconciliation file. He founded Waaseyak, an Indigenous-owned and Indigenous-led consulting firm that provides Indigenous communities, First Nations, Métis, and Inuit with extra capacity and scalable economic solutions to build lasting community prosperity. He is the husband of Nicola Little, Artist & Cultural Connector from Garden Hill First Nation (Treaty 5), who has more than 15 years in the arts and cultural sector, and the father of Charlie and Zaagaasgeh Lucy. He lives in Winnipeg on Treaty 1 Territory.
             </p>
             <p className="text-base text-subtle">
               This site is a simple point of contact. If you are an Indigenous community or an ally working on economic reconciliation — I’d welcome the conversation.
@@ -767,7 +767,7 @@ export function Contact() {
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">05 — Contact</p>
         <h2 className="font-display text-2xl text-fg">Let’s talk</h2>
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
-          I look forward to talking with like-minded people who want to contribute to reconciliation — moving First Nations forward, and Canada with them.
+          I look forward to talking with like-minded people who want to contribute to reconciliation — moving Indigenous communities forward, First Nations, Métis, and Inuit, and Canada with them.
         </p>
         <div className="mt-10">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-subtle">Email</p>

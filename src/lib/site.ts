@@ -4,7 +4,7 @@ export const SITE = {
   title: "Jesse Steckley | Economic Reconciliation Strategist",
   shortTitle: "Economic Reconciliation Strategist",
   description:
-    "Jesse Steckley (Aubdauban) is an Economic Reconciliation Strategist from Wasauksing First Nation. He works with Indigenous communities and allies on the full file — moving First Nations forward, and Canada with them.",
+    "Jesse Steckley (Aubdauban) is an Economic Reconciliation Strategist from Wasauksing First Nation. He works with Indigenous communities and allies — moving Indigenous communities forward, First Nations, Métis, and Inuit, and Canada with them.",
   url: "https://jessesteckley.com",
   email: "jessesteckley@gmail.com",
   locale: "en_CA",
@@ -60,7 +60,7 @@ export const FAQ = [
   },
   {
     q: "Who do you work with?",
-    a: "Indigenous communities and governments, and allies — companies, institutions, funders, and public partners who want to do the work well.",
+    a: "Indigenous communities — First Nations, Métis, and Inuit — and allies: companies, institutions, funders, and public partners who want to do the work well.",
   },
   {
     q: "How do we start?",
@@ -68,7 +68,7 @@ export const FAQ = [
   },
   {
     q: "What is Waaseyak?",
-    a: "Waaseyak is a company Jesse founded and leads as Principal. It helps Indigenous communities get quicker access to capital and launch economic projects — so Nations can move when they are ready, not when a funding window happens to open.",
+    a: "Waaseyak is an Indigenous-owned and Indigenous-led consulting firm that provides Indigenous communities, First Nations, Métis, and Inuit with extra capacity and scalable economic solutions to build lasting community prosperity. Jesse founded the firm and serves as Principal.",
   },
   {
     q: "Do you build websites or apps?",

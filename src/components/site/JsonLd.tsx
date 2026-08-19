@@ -78,7 +78,7 @@ export function JsonLd() {
           "Ally and institutional partnership strategy",
         ],
         description:
-          "Economic reconciliation strategy for Indigenous communities and allies — moving First Nations forward, and Canada with them.",
+          "Economic reconciliation strategy for Indigenous communities, First Nations, Métis, and Inuit — and Canada with them.",
         makesOffer: [
           {
             "@type": "Offer",
