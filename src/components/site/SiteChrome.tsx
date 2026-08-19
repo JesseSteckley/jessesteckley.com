@@ -239,24 +239,82 @@ function CountUp({
   return <span ref={ref}>{formatCount(value, kind, decimals)}</span>;
 }
 
+
+function HeroLive() {
+  const aRef = useRef<HTMLVideoElement>(null);
+  const bRef = useRef<HTMLVideoElement>(null);
+  const activeRef = useRef<"a" | "b">("a");
+  const [front, setFront] = useState<"a" | "b">("a");
+  const [soft, setSoft] = useState(true);
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setSoft(!reduce);
+    if (reduce) return;
+    const fadeMs = 300;
+    let fading = false;
+    const id = window.setInterval(() => {
+      const key = activeRef.current;
+      const lead = key === "a" ? aRef.current : bRef.current;
+      const next = key === "a" ? bRef.current : aRef.current;
+      if (!lead?.duration || !next || fading) return;
+      if (lead.duration - lead.currentTime > fadeMs / 1000 + 0.04) return;
+      fading = true;
+      next.currentTime = 0;
+      void next.play();
+      activeRef.current = key === "a" ? "b" : "a";
+      setFront(activeRef.current);
+      window.setTimeout(() => {
+        lead.pause();
+        lead.currentTime = 0;
+        fading = false;
+      }, fadeMs);
+    }, 40);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const src = (
+    <>
+      <source src="/jesse-live.mp4" type="video/mp4" />
+    </>
+  );
+
+  if (!soft) {
+    return (
+      <div className="hero-live-wrap">
+        <video className="hero-live is-front" autoPlay muted loop playsInline preload="auto" poster="/images/jesse-live-poster.webp">
+          {src}
+        </video>
+      </div>
+    );
+  }
+
+  return (
+    <div className="hero-live-wrap">
+      <video
+        ref={aRef}
+        className={"hero-live" + (front === "a" ? " is-front" : "")}
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        poster="/images/jesse-live-poster.webp"
+      >
+        {src}
+      </video>
+      <video ref={bRef} className={"hero-live" + (front === "b" ? " is-front" : "")} muted playsInline preload="auto">
+        {src}
+      </video>
+    </div>
+  );
+}
+
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-24 md:pt-28">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center px-5 pb-16 sm:px-6 md:grid-cols-2 md:gap-10 md:pb-20 lg:gap-14">
         <div className="relative order-1 mb-6 flex w-full justify-center md:order-2 md:mb-0 md:justify-end">
-          <div className="hero-live-wrap">
-            <video
-              className="hero-live"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              poster="/images/jesse-live-poster.webp"
-            >
-              <source src="/jesse-live.mp4" type="video/mp4" />
-            </video>
-          </div>
+          <HeroLive />
         </div>
 
         <div className="order-2 w-full max-w-xl md:order-1">

@@ -308,17 +308,22 @@ details > summary {
   width: 100%;
   overflow: visible;
   isolation: isolate;
+  aspect-ratio: 720 / 1096;
+  max-height: min(68vh, 34rem);
 }
 
 .hero-live {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  height: auto;
-  max-height: min(68vh, 34rem);
-  aspect-ratio: 720 / 1096;
+  height: 100%;
   object-fit: contain;
   object-position: center top;
   background: transparent;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  z-index: 0;
   transform: scaleX(-1);
   -webkit-mask-image:
     radial-gradient(ellipse 78% 84% at 48% 28%, #000 48%, transparent 84%),
@@ -330,14 +335,16 @@ details > summary {
   mask-composite: intersect;
 }
 
+.hero-live.is-front {
+  opacity: 1;
+  z-index: 1;
+}
+
 .hero-live-wrap::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(
-      to right,
+  z-index: 2;
       var(--color-bg) 0%,
       color-mix(in oklab, var(--color-bg) 50%, transparent) 8%,
       transparent 18%,
@@ -356,8 +363,11 @@ details > summary {
   pointer-events: none;
 }
 
-@media (max-width: 767px) {
-  .hero-live-wrap {
+@media (prefers-reduced-motion: reduce) {
+  .hero-live {
+    transition: none;
+  }
+}
     max-width: 16.5rem;
     margin-inline: auto;
   }
