@@ -251,7 +251,8 @@ export function Hero() {
               muted
               loop
               playsInline
-              poster="/images/jesse-portrait-720.webp"
+              preload="auto"
+              poster="/images/jesse-live-poster.webp"
             >
               <source src="/jesse-live.mp4" type="video/mp4" />
             </video>
