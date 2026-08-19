@@ -262,11 +262,11 @@ export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-24 md:pt-28">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center px-5 pb-16 sm:px-6 md:grid-cols-2 md:gap-10 md:pb-20 lg:gap-14">
-        <div className="relative order-2 flex w-full justify-center md:order-2 md:justify-end">
+        <div className="relative order-1 mb-6 flex w-full justify-center md:order-2 md:mb-0 md:justify-end">
           <HeroLive />
         </div>
 
-        <div className="order-1 mb-8 w-full max-w-xl md:order-1 md:mb-0">
+        <div className="order-2 w-full max-w-xl md:order-1">
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.14em] text-accent">
             Wasauksing First Nation · Robinson Huron Treaty 1850
           </p>
