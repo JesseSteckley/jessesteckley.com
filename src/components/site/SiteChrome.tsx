@@ -245,6 +245,7 @@ function HeroLive() {
   const bRef = useRef<HTMLVideoElement>(null);
   const activeRef = useRef<"a" | "b">("a");
   const [front, setFront] = useState<"a" | "b">("a");
+  const [under, setUnder] = useState<"a" | "b" | null>(null);
   const [soft, setSoft] = useState(true);
 
   useEffect(() => {
@@ -260,10 +261,17 @@ function HeroLive() {
       if (!lead?.duration || !next || fading) return;
       if (lead.duration - lead.currentTime > 0.42) return;
       fading = true;
+      const nextKey = key === "a" ? "b" : "a";
       next.currentTime = 0;
       void next.play();
-      activeRef.current = key === "a" ? "b" : "a";
-      setFront(activeRef.current);
+      setUnder(nextKey);
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          activeRef.current = nextKey;
+          setFront(nextKey);
+          setUnder(null);
+        });
+      });
       window.setTimeout(() => {
         lead.pause();
         lead.currentTime = 0;
@@ -279,6 +287,10 @@ function HeroLive() {
     </>
   );
 
+  function layer(id: "a" | "b") {
+    return "hero-live" + (front === id ? " is-front" : "") + (under === id ? " is-under" : "");
+  }
+
   if (!soft) {
     return (
       <div className="hero-live-wrap">
@@ -293,7 +305,7 @@ function HeroLive() {
     <div className="hero-live-wrap">
       <video
         ref={aRef}
-        className={"hero-live" + (front === "a" ? " is-front" : "")}
+        className={layer("a")}
         autoPlay
         muted
         playsInline
@@ -302,7 +314,7 @@ function HeroLive() {
       >
         {src}
       </video>
-      <video ref={bRef} className={"hero-live" + (front === "b" ? " is-front" : "")} muted playsInline preload="auto">
+      <video ref={bRef} className={layer("b")} muted playsInline preload="auto">
         {src}
       </video>
     </div>

@@ -335,9 +335,15 @@ details > summary {
   mask-composite: intersect;
 }
 
-.hero-live.is-front {
+.hero-live.is-under {
   opacity: 1;
   z-index: 1;
+  transition: none;
+}
+
+.hero-live.is-front {
+  opacity: 1;
+  z-index: 2;
 }
 
 .hero-live-wrap::after {
