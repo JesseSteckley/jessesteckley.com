@@ -372,14 +372,14 @@ const APPROACH = [
     feature: true,
     image: "/images/approach-waaseyak-1100.webp",
     imageFallback: "/images/approach-waaseyak-1100.jpg",
-    line: "I founded Waaseyak and serve as Principal. Prompt us your idea — we generate a high-level business plan, follow up with a preliminary, and book a discovery call soon after so the project starts moving.",
+    line: "I founded Waaseyak and serve as Principal. It exists so Indigenous communities can get to capital faster and launch economic projects on their own timeline.",
     points: [
-      "Prompt your idea to Waaseyak",
-      "Receive a high-level business plan",
-      "Preliminary follow-up, then a discovery call to get you launched",
+      "Quicker access to capital for Nations",
+      "Support to launch community economic projects",
+      "Built for communities ready to move",
     ],
-    cta: "Prompt your idea",
-    href: "mailto:jessesteckley@gmail.com?subject=Waaseyak%20idea",
+    cta: "Get in touch",
+    href: "mailto:jessesteckley@gmail.com?subject=Waaseyak",
   },
 ];
 
@@ -472,7 +472,7 @@ export function About() {
               for leadership in economic reconciliation.
             </p>
             <p>
-              Jesse’s personal consulting sits with Indigenous communities and allies on the full economic reconciliation file. He also owns Waaseyak, a separate company for prompting an idea, generating a high-level plan, and moving toward capital and launch. He is the husband of Nicola Little, Artist & Cultural Connector from Garden Hill First Nation (Treaty 5), who has more than 15 years in the arts and cultural sector, and the father of Charlie and Zaagaasgeh Lucy. He lives in Winnipeg on Treaty 1 Territory.
+              Jesse works with Indigenous communities and allies on the full economic reconciliation file. He founded Waaseyak to help Nations reach capital faster and launch economic projects. He is the husband of Nicola Little, Artist & Cultural Connector from Garden Hill First Nation (Treaty 5), who has more than 15 years in the arts and cultural sector, and the father of Charlie and Zaagaasgeh Lucy. He lives in Winnipeg on Treaty 1 Territory.
             </p>
             <p className="text-base text-subtle">
               This site is a simple point of contact. If you are an Indigenous community or an ally working on economic reconciliation — I’d welcome the conversation.
@@ -767,7 +767,7 @@ export function Contact() {
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">05 — Contact</p>
         <h2 className="font-display text-2xl text-fg">Let’s talk</h2>
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
-          For personal consulting, write directly. If you want to prompt an idea into a plan and a discovery call, that path is Waaseyak — a company I own.
+          I look forward to talking with like-minded people who want to contribute to reconciliation — moving First Nations forward, and Canada with them.
         </p>
         <div className="mt-10">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-subtle">Email</p>
@@ -820,7 +820,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-bg py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 text-sm text-subtle sm:flex-row sm:px-6">
-        <p>© {new Date().getFullYear()} Jesse Steckley · personal consulting. Waaseyak is a separate company.</p>
+        <p>© {new Date().getFullYear()} Jesse Steckley</p>
         <p className="flex items-center gap-2">
           Winnipeg · Treaty 1 Territory
           <button type="button" className="egg-ember" aria-label="A quiet light" onClick={() => spark("forever")} />

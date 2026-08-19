@@ -12,7 +12,7 @@ export function JsonLd() {
         familyName: "Steckley",
         additionalName: SITE.indigenousName,
         alternateName: ["Aubdauban", "Jesse Steckley Aubdauban"],
-        jobTitle: `${SITE.shortTitle}; independent consultant. Owner of Waaseyak`,
+        jobTitle: SITE.shortTitle,
         description: SITE.description,
         url: SITE.url,
         email: SITE.email,
@@ -78,7 +78,7 @@ export function JsonLd() {
           "Ally and institutional partnership strategy",
         ],
         description:
-          "Independent economic reconciliation consulting for Indigenous communities and allies. Waaseyak is a separate company the founder owns.",
+          "Economic reconciliation strategy for Indigenous communities and allies — moving First Nations forward, and Canada with them.",
         makesOffer: [
           {
             "@type": "Offer",
