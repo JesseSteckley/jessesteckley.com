@@ -322,7 +322,7 @@ details > summary {
   object-position: center top;
   background: transparent;
   opacity: 0;
-  transition: opacity 160ms ease;
+  transition: opacity 420ms ease-in-out;
   z-index: 0;
   transform: scaleX(-1);
   -webkit-mask-image:
