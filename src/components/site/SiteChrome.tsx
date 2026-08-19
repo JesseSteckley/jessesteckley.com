@@ -244,12 +244,12 @@ function HeroLive() {
   return (
     <div className="hero-live-wrap">
       <video
-        className="hero-live is-front"
+        className="hero-live"
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         poster="/images/jesse-live-poster.webp"
       >
         <source src="/jesse-live.mp4" type="video/mp4" />
