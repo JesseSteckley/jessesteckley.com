@@ -183,7 +183,7 @@ export function Nav() {
 }
 
 
-function formatCount(value: number, kind: "number" | "money", decimals: number) {
+function formatCount(value: number, kind: "number" | "money") {
   if (kind === "money") {
     if (value < 1_000_000) return `$${Math.round(value / 1000)}K`;
     return `$${(value / 1_000_000).toFixed(1)}M`;
@@ -191,52 +191,74 @@ function formatCount(value: number, kind: "number" | "money", decimals: number) 
   return Math.round(value).toLocaleString("en-CA");
 }
 
+function easeInOut(t: number) {
+  return t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
+}
+
 function CountUp({
   from = 0,
   to,
   kind = "number",
-  decimals = 0,
+  play,
 }: {
   from?: number;
   to: number;
   kind?: "number" | "money";
-  decimals?: number;
+  play: boolean;
 }) {
-  const ref = useRef<HTMLSpanElement>(null);
   const [value, setValue] = useState(from);
 
   useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
+    if (!play) {
+      setValue(from);
+      return;
+    }
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setValue(to);
       return;
     }
     let frame = 0;
+    const start = performance.now();
+    const duration = 3400;
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / duration);
+      setValue(from + (to - from) * easeInOut(t));
+      if (t < 1) frame = window.requestAnimationFrame(tick);
+    };
+    frame = window.requestAnimationFrame(tick);
+    return () => window.cancelAnimationFrame(frame);
+  }, [from, to, play]);
+
+  return <span className="tabular-nums">{formatCount(value, kind)}</span>;
+}
+
+function useWhenInView() {
+  const ref = useRef<HTMLElement>(null);
+  const [play, setPlay] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || play) return;
+
+    const ready = (entry: IntersectionObserverEntry) => {
+      const vh = window.innerHeight || 1;
+      const mid = entry.boundingClientRect.top + entry.boundingClientRect.height / 2;
+      return entry.isIntersecting && entry.intersectionRatio >= 0.35 && mid > vh * 0.2 && mid < vh * 0.82;
+    };
+
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (!entry?.isIntersecting) return;
+        if (!entry || !ready(entry)) return;
+        setPlay(true);
         io.disconnect();
-        const start = performance.now();
-        const duration = 1600;
-        const tick = (now: number) => {
-          const t = Math.min(1, (now - start) / duration);
-          const eased = 1 - (1 - t) ** 3;
-          setValue(from + (to - from) * eased);
-          if (t < 1) frame = window.requestAnimationFrame(tick);
-        };
-        frame = window.requestAnimationFrame(tick);
       },
-      { threshold: 0.45 },
+      { threshold: [0.2, 0.35, 0.5, 0.65, 0.8], rootMargin: "0px 0px -12% 0px" },
     );
     io.observe(node);
-    return () => {
-      io.disconnect();
-      if (frame) window.cancelAnimationFrame(frame);
-    };
-  }, [from, to]);
+    return () => io.disconnect();
+  }, [play]);
 
-  return <span ref={ref}>{formatCount(value, kind, decimals)}</span>;
+  return { ref, play };
 }
 
 
@@ -304,18 +326,20 @@ export function Hero() {
 }
 
 export function Stats() {
+  const { ref, play } = useWhenInView();
+
   return (
-    <section aria-label="Growth I helped deliver" className="border-t border-border bg-surface">
+    <section ref={ref} aria-label="Growth I helped deliver" className="border-t border-border bg-surface">
       <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
         <button type="button" className="fuse px-5 py-8 text-left sm:px-8" data-fuse onClick={() => spark("dawn")} aria-label="Grew BCM Indigenous Education Awards from 100 to 530 awards a year">
           <p className="font-display text-2xl text-fg tabular-nums">
-            <CountUp from={100} to={530} />
+            <CountUp from={100} to={530} play={play} />
           </p>
           <p className="mt-1 text-sm text-muted">Awards a year — grown from 100</p>
         </button>
         <button type="button" className="fuse px-5 py-8 text-left sm:px-8" data-fuse onClick={() => spark("dawn")} aria-label="Grew annual student support from 300 thousand to 1.6 million dollars">
           <p className="font-display text-2xl text-fg tabular-nums">
-            <CountUp from={300_000} to={1_600_000} kind="money" />
+            <CountUp from={300_000} to={1_600_000} kind="money" play={play} />
           </p>
           <p className="mt-1 text-sm text-muted">Annual student support — from $300K</p>
         </button>
