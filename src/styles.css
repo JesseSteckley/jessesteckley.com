@@ -319,15 +319,15 @@ details > summary {
   max-height: min(62vh, 30rem);
   aspect-ratio: 720 / 1096;
   object-fit: contain;
-  object-position: center top;
+  object-position: center center;
   background: transparent;
   -webkit-mask-image:
-    radial-gradient(ellipse 78% 84% at 48% 28%, #000 48%, transparent 84%),
-    linear-gradient(to bottom, #000 0 54%, transparent 94%);
+    radial-gradient(ellipse 92% 96% at 50% 38%, #000 56%, transparent 90%),
+    linear-gradient(to bottom, #000 0 62%, transparent 96%);
   -webkit-mask-composite: source-in;
   mask-image:
-    radial-gradient(ellipse 78% 84% at 48% 28%, #000 48%, transparent 84%),
-    linear-gradient(to bottom, #000 0 54%, transparent 94%);
+    radial-gradient(ellipse 92% 96% at 50% 38%, #000 56%, transparent 90%),
+    linear-gradient(to bottom, #000 0 62%, transparent 96%);
   mask-composite: intersect;
 }
 
