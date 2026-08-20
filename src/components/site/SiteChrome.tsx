@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FAQ, LINKS, SITE } from "@/lib/site";
 import { track } from "@/lib/analytics";
 
@@ -6,6 +6,7 @@ const NAV = [
   { href: "#approach", label: "Approach" },
   { href: "#about", label: "About" },
   { href: "#impact", label: "Impact" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -206,11 +207,11 @@ function CountUp({
   kind?: "number" | "money";
   play: boolean;
 }) {
-  const [value, setValue] = useState(from);
+  const [value, setValue] = useState(to);
 
   useEffect(() => {
     if (!play) {
-      setValue(from);
+      setValue(to);
       return;
     }
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -341,7 +342,7 @@ export function Stats() {
           <p className="font-display text-2xl text-fg tabular-nums">
             <CountUp from={300_000} to={1_600_000} kind="money" play={play} />
           </p>
-          <p className="mt-1 text-sm text-muted">Annual student support — from $300K</p>
+          <p className="mt-1 text-sm text-muted">Annual student support — grown from $300K</p>
         </button>
         <button type="button" className="fuse px-5 py-8 text-left sm:px-8" data-fuse onClick={() => spark("dawn")}>
           <p className="font-display text-2xl text-fg">Future 40</p>
@@ -376,7 +377,7 @@ const APPROACH = [
     href: LINKS.discovery,
   },
   {
-    kicker: "02 — Land",
+    kicker: "02 — Systems",
     title: "Systems that last",
     feature: false,
     image: "/images/approach-land-1100.webp",
@@ -532,87 +533,13 @@ const IMPACT = [
   },
 ];
 
-type ContribDay = { date: string; count: number; level: number };
-
 function GitHubContributions() {
-  const [days, setDays] = useState<ContribDay[] | null>(null);
-  const [total, setTotal] = useState<number | null>(null);
-  const [litDay, setLitDay] = useState<string | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    fetch(`https://github-contributions-api.jogruber.de/v4/${SITE.githubUser}?y=2026`)
-      .then((res) => {
-        if (!res.ok) throw new Error("contrib fetch failed");
-        return res.json() as Promise<{ total?: Record<string, number>; contributions: ContribDay[] }>;
-      })
-      .then((data) => {
-        if (cancelled) return;
-        setDays(data.contributions ?? []);
-        setTotal(data.total?.["2026"] ?? data.contributions.reduce((sum, d) => sum + d.count, 0));
-      })
-      .catch(() => {
-        if (!cancelled) {
-          setDays([]);
-          setTotal(8);
-        }
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const weeks = useMemo(() => {
-    if (!days?.length) return [];
-    const byDate = new Map(days.map((d) => [d.date, d]));
-    const start = new Date(Date.UTC(2026, 0, 1));
-    while (start.getUTCDay() !== 0) start.setUTCDate(start.getUTCDate() - 1);
-    const end = new Date(Date.UTC(2026, 11, 31));
-    while (end.getUTCDay() !== 6) end.setUTCDate(end.getUTCDate() + 1);
-    const columns: ContribDay[][] = [];
-    let week: ContribDay[] = [];
-    for (let t = start.getTime(); t <= end.getTime(); t += 86400000) {
-      const dt = new Date(t);
-      const key = dt.toISOString().slice(0, 10);
-      const found = byDate.get(key);
-      week.push(found ?? { date: key, count: 0, level: dt.getUTCFullYear() === 2026 ? 0 : -1 });
-      if (week.length === 7) {
-        columns.push(week);
-        week = [];
-      }
-    }
-    return columns;
-  }, [days]);
-
-  const colors = ["#161b22", "#3d3226", "#6b5338", "#9a7548", "#c49a63"];
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const cell = 12;
-  const gap = 3;
-  const left = 32;
-  const top = 28;
-  const width = left + Math.max(weeks.length, 1) * (cell + gap) + 8;
-  const height = top + 7 * (cell + gap) + 26;
-
-  const monthLabels: { x: number; label: string }[] = [];
-  let lastMonth = -1;
-  weeks.forEach((week, wi) => {
-    const d = week.find((day) => day.level >= 0);
-    if (!d) return;
-    const month = Number(d.date.slice(5, 7)) - 1;
-    if (month !== lastMonth) {
-      monthLabels.push({ x: left + wi * (cell + gap), label: months[month] });
-      lastMonth = month;
-    }
-  });
-
   return (
     <div className="mt-12 rounded-xl border border-border bg-elevated p-5 sm:p-7">
       <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">GitHub</p>
-          <p className="mt-2 text-sm text-muted">
-            <span className="font-medium text-fg">{total ?? "—"} contributions</span> in 2026 · I still write the tools
-          </p>
+          <p className="mt-2 text-sm font-medium text-fg">I still write the tools</p>
         </div>
         <a
           href={SITE.github}
@@ -624,79 +551,9 @@ function GitHubContributions() {
           <IconArrow />
         </a>
       </div>
-      <p className="mb-6 max-w-2xl text-sm leading-relaxed text-muted">
+      <p className="max-w-2xl text-sm leading-relaxed text-muted">
         Strategy first — and I can sit in the stack. I use AI and a Juno web-dev base to ship sites and tools when asked. Larger builds, I bring a team and stay until the work meets the community’s standard.
       </p>
-      <div className="overflow-x-auto">
-        {weeks.length ? (
-          <svg
-            viewBox={`0 0 ${width} ${height}`}
-            className="h-auto w-full min-w-[680px]"
-            role="img"
-            aria-label={`${total ?? 0} GitHub contributions in 2026`}
-          >
-            {monthLabels.map((m) => (
-              <text key={m.label + m.x} x={m.x} y={16} fill="#efe6d4" fillOpacity="0.5" fontSize="11" fontFamily="system-ui,sans-serif">
-                {m.label}
-              </text>
-            ))}
-            {[
-              ["Mon", 1],
-              ["Wed", 3],
-              ["Fri", 5],
-            ].map(([label, row]) => (
-              <text
-                key={label}
-                x={2}
-                y={top + Number(row) * (cell + gap) + 10}
-                fill="#efe6d4"
-                fillOpacity="0.5"
-                fontSize="10"
-                fontFamily="system-ui,sans-serif"
-              >
-                {label}
-              </text>
-            ))}
-            {weeks.map((week, wi) =>
-              week.map((day, di) => {
-                if (day.level < 0) return null;
-                const level = Math.max(0, Math.min(4, day.level));
-                return (
-                  <rect
-                    key={day.date}
-                    x={left + wi * (cell + gap)}
-                    y={top + di * (cell + gap)}
-                    width={cell}
-                    height={cell}
-                    rx={2}
-                    className="egg-cell"
-                    fill={litDay === day.date ? "#efe6d4" : colors[level]}
-                    onClick={() => {
-                      setLitDay(day.date);
-                      if (day.count > 0) spark("forever");
-                    }}
-                  >
-                    <title>
-                      {day.date}: {day.count} contribution{day.count === 1 ? "" : "s"}
-                    </title>
-                  </rect>
-                );
-              }),
-            )}
-            <text x={width - 148} y={height - 8} fill="#efe6d4" fillOpacity="0.5" fontSize="10" fontFamily="system-ui,sans-serif">
-              Less
-            </text>
-            {colors.map((c, i) => (
-              <rect key={c} x={width - 118 + i * 14} y={height - 18} width={11} height={11} rx={2} fill={c} />
-            ))}
-            <text x={width - 44} y={height - 8} fill="#efe6d4" fillOpacity="0.5" fontSize="10" fontFamily="system-ui,sans-serif">
-              More
-            </text>
-          </svg>
-        ) : (
-          <p className="text-sm text-subtle">Loading contribution activity…</p>
-        )}
-      </div>
     </div>
   );
 }
@@ -791,7 +648,7 @@ export function Contact() {
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">05 — Contact</p>
         <h2 className="font-display text-2xl text-fg">Let’s talk</h2>
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
-          I look forward to talking with like-minded people who want to contribute to reconciliation — moving Indigenous communities forward, First Nations, Métis, and Inuit, and Canada with them.
+          If you are carrying a file — a community, a company, or a public partner — book 30 minutes or email. Bring it as it is.
         </p>
         <div className="mt-10">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-subtle">Email</p>
